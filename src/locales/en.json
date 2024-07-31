@@ -1,0 +1,41 @@
+{
+    "common": {
+        "name": "Aleksandr Matyushik"
+    },
+    "notFound": {
+        "title": "Page Not Found",
+        "description": "The page you're looking for doesn't exist.",
+        "backToHome": "Back to Home"
+    },
+    "home": {
+        "heading": "Heading"
+    },
+    "Navigation": {
+        "titles": {
+            "home": "Home",
+            "education": "Education",
+            "work": "Work",
+            "courses": "Courses",
+            "contacts": "Contacts"
+        }
+    },
+    "Footer": {
+        "aboutMe": "About Me",
+        "aboutMeDescription": "Hello! My name is Aleksandr Matyushik, I am an experienced Front-End Developer with over five years of solid experience in software development, currently based in Minsk, Belarus. I'm passionate about creating clean, responsive, and user-friendly web applications.",
+        "quickLinks": "Quick Links",
+        "home": "Home",
+        "about": "About",
+        "contact": "Contact",
+        "privacyPolicy": "Privacy Policy",
+        "followMe": "Follow Me",
+        "allRightsReserved": "All Rights Reserved",
+        "contacts": "Contacts",
+        "phoneTitle": "Phone",
+        "phone": "+375 29 821 20 56",
+        "addressTitle": "Address",
+        "address": "6 Yana Checheta, Minsk, Belarus",
+        "emailTitle": "Emails",
+        "gmail": "alexllewton1991@gmail.com",
+        "mail": "alex-llewton@mail.ru"
+    }
+}

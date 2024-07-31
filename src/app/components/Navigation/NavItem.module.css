@@ -1,0 +1,32 @@
+.navItem {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+
+.active {
+  background-color: rgb(185, 128, 22);
+  color: #ffffff;
+}
+
+.icon {
+  margin-right: 8px;
+}
+
+.text {
+  font-size: 1rem;
+  color: inherit;
+}
+
+.mobileView {
+  flex-direction: column;
+  width: 100%;
+}
+
+.divider {
+  margin: 4px 0;
+}
