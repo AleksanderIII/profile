@@ -1,0 +1,48 @@
+.paper {
+  padding: 1rem;
+  margin-top: 1rem;
+  /* Дополнительные стили для анимаций, если нужно */
+}
+
+.heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  margin-right: 0.5rem;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.details {
+  font-size: 0.875rem;
+}
+
+/* Адаптивные стили */
+@media (max-width: 48em) {
+  /* max-width: 768px */
+  .paper {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .heading {
+    font-size: 1rem;
+  }
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+  .item {
+    margin-bottom: 0.5rem;
+  }
+}

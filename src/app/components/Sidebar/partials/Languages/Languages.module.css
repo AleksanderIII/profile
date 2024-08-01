@@ -1,0 +1,19 @@
+.languagesContainer {
+  border-bottom: 1px solid var(--chakra-colors-divider);
+}
+
+.languageItem {
+  display: grid;
+  grid-template-columns: auto 110px 40px;
+  align-items: center;
+  padding: 3px 0;
+  gap: 1rem;
+}
+
+.languageName {
+  font-weight: bold;
+}
+
+.languageLevel {
+  color: var(--chakra-colors-gray-600);
+}

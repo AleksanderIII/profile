@@ -1,12 +1,69 @@
 .headerContainer {
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: space-between;
-  padding: 16px;
+  align-items: center;
+  padding: 1rem;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  position: relative; /* Нужно для абсолютного позиционирования кнопки в мобильном виде */
 }
 
-.mobileView {
-  flex-direction: column;
-  align-items: flex-start;
+.menuButton {
+  display: none; /* Скрываем кнопку по умолчанию */
+  background-color: #3182ce; /* Цвет кнопки */
+  color: white; /* Цвет текста кнопки */
+  border: none; /* Без границы */
+  padding: 0.5rem 1rem; /* Отступы внутри кнопки */
+  border-radius: 4px; /* Закругленные углы */
+  font-size: 1rem; /* Размер шрифта */
+  cursor: pointer; /* Курсор-указатель */
+  position: absolute; /* Абсолютное позиционирование для кнопки */
+  top: 1rem; /* Отступ сверху */
+  right: 1rem; /* Отступ справа */
+  z-index: 10; /* Должен быть выше остальных элементов */
+}
+
+.menuButton:hover {
+  background-color: #2b6cb0; /* Цвет кнопки при наведении */
+}
+
+.menuButton:focus {
+  outline: none; /* Убираем обводку при фокусе */
+}
+
+.navContainer {
+  display: flex;
+}
+
+@media (max-width: 700px) {
+  .menuButton {
+    display: inline-block; /* Показываем кнопку на мобильных устройствах */
+  }
+
+  .navContainer {
+    display: none; /* Скрываем навигацию по умолчанию на мобильных */
+  }
+
+  /* Фон для мобильного вида */
+  .mobileMenu {
+    background-color: #f5f5f5; /* Светлый фон для мобильного меню */
+    padding: 1rem; /* Отступы вокруг содержимого */
+    border-top: 1px solid #ddd; /* Граница сверху */
+    position: fixed; /* Фиксированное положение */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9; /* Должен быть ниже кнопки меню */
+  }
+}
+
+@media (min-width: 700px) {
+  .menuButton {
+    display: none; /* Скрываем кнопку на десктопе */
+  }
+
+  .navContainer {
+    display: flex; /* Показываем навигацию на десктопе */
+  }
 }

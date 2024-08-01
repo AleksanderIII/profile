@@ -1,11 +1,53 @@
-.profileContainer {
-  text-align: center;
+.container {
+  display: flex;
+  position: relative; /* Для правильного позиционирования кнопки меню */
 }
 
-.title {
-  color: #2d3748;
+.sidebar {
+  width: 33%; /* Для экранов более 700px */
+  background-color: #f0f0f0;
+  border-right: 1px solid #ddd;
+  padding: 2rem;
+  position: relative;
+  transition: transform 0.3s ease;
 }
 
-.description {
-  color: #4a5568;
+.sidebarOpen {
+  transform: translateX(0);
+}
+
+.mainContent {
+  flex: 1;
+  background-color: #fff;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.menuButton {
+  z-index: 1000;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background-color: #3182ce; /* Цвет кнопки меню */
+  color: #fff; /* Цвет текста кнопки */
+  border-radius: 4px; /* Скругление углов кнопки */
+}
+
+@media (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    position: fixed; /* Фиксируем боковую панель при прокрутке */
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    z-index: 900; /* Устанавливаем z-index ниже, чем у кнопки меню */
+  }
+
+  .sidebarOpen {
+    transform: translateX(0);
+  }
+
+  .mainContent {
+    margin-left: 0; /* Убираем отступ для основной части */
+  }
 }

@@ -1,0 +1,23 @@
+.skillsContainer {
+  border-bottom: 1px solid var(--chakra-colors-divider);
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.skillsTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.skillItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid var(--chakra-colors-divider);
+  padding: 0.5rem 0;
+}
+
+.skillRating {
+  display: flex;
+  align-items: center;
+}

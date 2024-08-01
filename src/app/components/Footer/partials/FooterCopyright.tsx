@@ -8,7 +8,7 @@ const FooterCopyright: React.FC = () => {
   const commonTranslate = useTranslations('common');
 
   return (
-    <Box textAlign='center' mt={4}>
+    <Box textAlign='center' mt={4} p={10}>
       <Text fontSize='sm'>
         &copy; {new Date().getFullYear()} {commonTranslate('name')}
         {'. '}

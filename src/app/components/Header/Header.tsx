@@ -1,25 +1,33 @@
 'use client';
 
-import { Box } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Drawer,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerHeader,
+  DrawerOverlay,
+  useDisclosure,
+  useMediaQuery,
+} from '@chakra-ui/react';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import Navigation from '../Navigation/Navigation';
 import LocaleSwitcher from '../LocaleSwitcher/LocaleSwitcher';
 import { Locale, locales, localeNames } from '../../../i18n.config';
 import { useLocale } from 'next-intl';
-
 import styles from './Header.module.css';
 
-const Header = ({
-  mobileView = false,
-  onLinkClick,
-}: {
-  mobileView?: boolean;
-  onLinkClick?: () => void;
-}) => {
+const Header = ({ onLinkClick }: { onLinkClick?: () => void }) => {
   const t = useTranslations('Navigation');
   const locale = useLocale() as Locale;
   const [activeSection, setActiveSection] = useState<string>('');
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  // Определяем, является ли экран мобильным
+  const [isMobile] = useMediaQuery('(max-width: 700px)');
 
   const handleClick = (link: string) => {
     setActiveSection(link);
@@ -35,17 +43,35 @@ const Header = ({
   ];
 
   return (
-    <Box
-      className={`${styles.headerContainer} ${
-        mobileView ? styles.mobileView : ''
-      }`}
-    >
-      <Navigation
-        items={navigationItems}
-        activeSection={activeSection}
-        onClick={handleClick}
-        mobileView={mobileView}
-      />
+    <Box className={styles.headerContainer}>
+      {isMobile && !isOpen && (
+        <Button onClick={onOpen} className={styles.menuButton}>
+          Menu
+        </Button>
+      )}
+      <Drawer isOpen={isOpen} onClose={onClose}>
+        <DrawerOverlay />
+        <DrawerContent className={styles.mobileMenu}>
+          <DrawerCloseButton />
+          <DrawerHeader>Navigation</DrawerHeader>
+          <DrawerBody>
+            <Navigation
+              items={navigationItems}
+              activeSection={activeSection}
+              onClick={handleClick}
+              mobileView={isMobile}
+            />
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
+      {!isMobile && (
+        <Navigation
+          items={navigationItems}
+          activeSection={activeSection}
+          onClick={handleClick}
+          mobileView={isMobile}
+        />
+      )}
       <LocaleSwitcher locale={locale} />
     </Box>
   );

@@ -1,0 +1,70 @@
+.paper {
+  padding: 1rem;
+  margin-top: 1rem;
+  /* Дополнительные стили для анимаций, если нужно */
+}
+
+.heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.listItem {
+  margin-bottom: 1rem;
+}
+
+.position {
+  margin-bottom: 1rem;
+}
+
+.positionContent {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.positionContentMobile {
+  flex-direction: column;
+}
+
+.positionLogo {
+  margin-right: 1rem;
+}
+
+.positionLogoMobile {
+  margin-right: 0;
+  margin-bottom: 0.5rem;
+}
+
+.positionText {
+  text-align: left;
+}
+
+.contractorPositions {
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+
+.contractorPositionsMobile {
+  padding-left: 0.5rem;
+}
+
+.contractor {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.contractorLogo {
+  margin-right: 0.5rem;
+}
+
+.contractorLogoMobile {
+  margin-right: 0;
+  margin-bottom: 0.5rem;
+}
+
+.contractorText {
+  text-align: left;
+}

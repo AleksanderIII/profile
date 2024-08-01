@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react';
-import NavItem from './NavItem';
-import NavigationLink from './NavigationLink';
+import NavItem from './NavItem/NavItem';
+import NavigationLink from './NavigationLink/NavigationLink';
 import styles from './Navigation.module.css';
 
 interface NavigationItem {

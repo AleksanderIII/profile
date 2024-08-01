@@ -1,0 +1,29 @@
+.sidebarContainer {
+  flex: 1 1 33%;
+  padding: 2rem;
+  padding-top: 0;
+}
+
+.sidebarContent {
+  padding: 0.25rem;
+  background-color: var(--chakra-colors-background);
+  color: var(--chakra-colors-text);
+  border-radius: 8px;
+  box-shadow: var(--chakra-shadows-md);
+  position: relative;
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--chakra-colors-warning);
+  color: var(--chakra-colors-warning-contrast);
+  display: none;
+}
+
+@media (max-width: 48em) {
+  .closeButton {
+    display: block;
+  }
+}

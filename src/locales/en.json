@@ -2,6 +2,11 @@
     "common": {
         "name": "Aleksandr Matyushik"
     },
+    "SideSummary": {
+        "name": "Aleksandr Matyushik",
+        "title": "Front-end developer",
+        "linkedin": "LinkedIn link"
+    },
     "notFound": {
         "title": "Page Not Found",
         "description": "The page you're looking for doesn't exist.",
@@ -18,6 +23,139 @@
             "courses": "Courses",
             "contacts": "Contacts"
         }
+    },
+    "introduction": {
+        "message": "Hello! My name is <name>Aleksandr Matyushik</name>, I am an experienced Front-End Developer with over five years of solid experience in software development. Currently, I reside in Minsk, Belarus, and I am seeking new opportunities."
+    },
+    "Education": {
+        "title": "Education",
+        "visitWebsite": "Visit website",
+        "school": {
+            "name": "Rolling Scopes School",
+            "degree": "Front-end Developer Course (mentee)",
+            "year": "2018",
+            "website": "https://rs.school/",
+            "logo": "rsschool.svg"
+        },
+        "university": {
+            "name": "Belarusian National Technical University",
+            "degree": "Bachelor's degree, Automation and Control of Energy Processes, Relay Protection of Electrical Installations",
+            "year": "2009 - 2014",
+            "website": "https://bntu.by/",
+            "logo": "bntu.png"
+        },
+        "magistracy": {
+            "name": "Belarusian National Technical University",
+            "degree": "Master's degree, Power Engineering",
+            "year": "2014 - 2015",
+            "website": "https://bntu.by/",
+            "logo": "bntu.png"
+        }
+    },
+    "WorkExperience": {
+        "title": "Career",
+        "visitWebsite": "Visit website",
+        "details": "Details",
+        "back": "Back",
+        "contractorPosition": "Contractor Position",
+        "contractorPositions": "List of Clients",
+        "minsk": "Minsk, Belarus",
+        "warsaw": "Warsaw, Poland",
+        "remote": "Remote",
+        "epam": {
+            "company": "EPAM Systems",
+            "position": "Software Developer",
+            "duration": "October 2018 - May 2024",
+            "location": "Warsaw, Mazowieckie, Poland",
+            "description": "<p>Worked as a contractor on projects for the companies mentioned below. All details are provided therein.</p><ul><li>Thomson Reuters</li><li>Refinitiv</li><li>LSEG</li></ul>"
+        },
+        "refinitiv": {
+            "company": "Refinitiv",
+            "position": "Software Developer (Contractor)",
+            "duration": "April 2019 - January 2022",
+            "location": "Minsk, Minsk, Belarus",
+            "description": "<div><ul><li>Developed mobile and tablet versions of the application, ensuring a seamless and responsive user experience across various devices;</li><li>Rewrote class components by transitioning to a functional approach with hooks for improved code structure and efficiency;</li><li>Implemented unit tests (Jest) to provide comprehensive coverage for the project, ensuring robust and reliable code functionality;</li><li>Implemented the functionality to export grid data to PDF and Excel formats, enhancing the application's versatility and data-sharing capabilities;</li><li>Implemented lazy loading to enhance performance, optimizing resource loading and improving the overall efficiency of the application;</li><li>Enhanced the performance of heavily loaded components within the project, leading to noticeable improvements in overall efficiency;</li><li>Engaged in weekly Scrum calls with the Product Owner, actively discussing potential solutions and future enhancements for the project;</li><li>Contributed to sprint planning and retrospective sessions, actively participating in daily calls with QA team members;</li><li>Engaged in configuring the application settings, utilizing tools such as Webpack, Prettier, and ESLint to enhance the development environment and maintain code quality;</li><li>Mentored a new junior developer on the project, facilitating their adaptation and knowledge enhancement to contribute effectively to the team.</li></ul></div>"
+        },
+        "thomson": {
+            "company": "Thomson Reuters",
+            "position": "Software Developer (Contractor)",
+            "duration": "October 2018 - April 2019",
+            "location": "Minsk, Minsk, Belarus",
+            "description": "<div><ul><li>Contributed to the development of an application (React) with class-based components, lifecycle methods, and integrated Redux for enhanced state management;</li><li>Developed a high-performance grid for presenting company data by periods;</li><li>Developed interactive charts utilizing the Highcharts.js library for dynamic and engaging data visualization;</li><li>Implemented optimization for requests using IndexedDB, enhancing the efficiency and responsiveness of data retrieval processes;</li><li>Implemented printing functionality for the application, allowing users to generate hard copies of content seamlessly;</li><li>Implemented functionality for grid data manipulation, including filtering, grouping, and column-specific search capabilities, enhancing the user experience and data exploration within the application.</li></ul></div>"
+        },
+        "bemn": {
+            "company": "BEMN",
+            "position": "Electrical Engineer",
+            "duration": "September 2014 - October 2016",
+            "location": "Minsk, Belarus",
+            "description": "<ul><li>Setup automatic system for commercial accounting of power consumption</li><li>Setup remote control of the electrical system.</li></ul>"
+        },
+        "lseg": {
+            "company": "London Stock Exchange Group",
+            "position": "Software Developer (Contractor)",
+            "duration": "January 2022 - December 2023",
+            "location": "Warsaw, Mazowieckie, Poland",
+            "description": "<div><p>Contributed to two projects:</p><ol><li><p>Developed an application using Angular:</p><ul><li>Managed the migration process from one backend system (REST) to another, transitioning to GraphQL for enhanced functionality and improved data querying capabilities;</li><li>Developed an audio stream player using Video.js specifically tailored for playing live event streaming;</li><li>Implemented corrections in the CI/CD configuration;</li></ul></li><li><p>Worked on app written using React:</p><ul><li>Developed multiple pages featuring grid structures and data visualization, including charts and a world map for comprehensive data representation;</li><li>Implemented a World Map component using d3 and topojson, enhancing the application with interactive and visually appealing geographical representation;</li><li>Implemented interactive charts utilizing the ChartJS library, enhancing the application with dynamic and visually compelling data visualizations;</li></ul></li></ol><p>Participated in the code review process, collaborating with team members to ensure code quality and adherence to best practices;</p><p>Engaged in weekly Scrum calls with Product Owners to discuss project updates, priorities, and ensure alignment with stakeholder expectations.</p></div>"
+        }
+    },
+    "Courses": {
+        "title": "Certificates",
+        "sourceLink": "Certificate Source Link",
+        "showMore": "Show More",
+        "showLess": "Show Less",
+        "AgileScrum": {
+            "title": "Agile Scrum from Scratch to Scrum Master"
+        },
+        "NodeJSAuthentication": {
+            "title": "Node.js Authentication APIs with JWT - The Complete Course"
+        },
+        "NodeJSFull": {
+            "title": "Node.js - The Complete Course"
+        },
+        "ReactNext": {
+            "title": "React + Next.js 13 - From Scratch. TypeScript, Hooks, SSR and Grid"
+        },
+        "GraphQL": {
+            "title": "GraphQL by Example"
+        },
+        "NextJSReact": {
+            "title": "Next.js 14 & React - The Complete Guide"
+        },
+        "TypeScript": {
+            "title": "TypeScript from Scratch - Complete Course and Design Patterns"
+        },
+        "NestJS": {
+            "title": "NestJS - From Scratch, Modern Backend with TypeScript and Node JS"
+        },
+        "RSSchool": {
+            "title": "Certificate of completion Rolling Scopes School"
+        }
+    },
+    "Contact": {
+        "title": "Contact me",
+        "location": "Location",
+        "phone": "Phone",
+        "emails": "Emails",
+        "linkedIn": "LinkedIn",
+        "sendMessage": "Send message",
+        "message": "Message",
+        "submit": "Submit",
+        "submitted": "Submitted",
+        "thankYouMessage": "Thank you for you message!",
+        "email": "Email"
+    },
+    "Languages": {
+        "title": "Languages",
+        "english": "English",
+        "russian": "Russian",
+        "belarusian": "Belarusian",
+        "polish": "Polish",
+        "level": "Level"
+    },
+    "Skills": {
+        "title": "Skills",
+        "hardSkills": "Hard Skills",
+        "softSkills": "Soft Skills"
     },
     "Footer": {
         "aboutMe": "About Me",
