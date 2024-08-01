@@ -1,20 +1,54 @@
 .skillsContainer {
-  border-bottom: 1px solid var(--chakra-colors-divider);
-  padding-bottom: 2rem;
+  padding: 1rem;
+  border: 1px solid #e2e8f0; /* Gray 200 */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
 }
 
-.skillsTitle {
+.accordionItem {
+  border: none;
+  margin-bottom: 1rem;
+}
+
+.accordionButton {
+  background-color: #f7fafc; /* Gray 50 */
+  padding: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.accordionButton:hover {
+  background-color: #edf2f7; /* Gray 100 */
+}
+
+.subCategoryTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2d3748; /* Text color */
+}
+
+.categoryTitle {
   font-size: 1.25rem;
-  font-weight: bold;
+  font-weight: 700;
+  color: #2d3748; /* Text color */
+}
+
+.accordionPanel {
+  padding: 1rem;
 }
 
 .skillItem {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  border-bottom: 1px solid var(--chakra-colors-divider);
+  justify-content: space-between;
   padding: 0.5rem 0;
+  border-bottom: 1px solid #e2e8f0; /* Gray 200 */
+}
+
+.skillName {
+  font-weight: 500;
+  color: #2d3748; /* Text color */
 }
 
 .skillRating {

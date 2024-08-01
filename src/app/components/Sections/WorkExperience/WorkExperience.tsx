@@ -3,9 +3,11 @@ import { Box, Heading, Text, Stack, Divider } from '@chakra-ui/react';
 import { useTranslations } from 'next-intl';
 import { format } from 'date-fns';
 import Image from 'next/image';
+
 import AnimatedPaper from '../../AnimatedPaper/AnimatedPaper';
-import { workExperience } from './constants'; // Убедитесь, что путь правильный
-import styles from './WorkExperience.module.css'; // Убедитесь, что путь правильный
+import { workExperience } from './constants';
+
+import styles from './WorkExperience.module.css';
 
 interface IPosition {
   company: string;
@@ -80,15 +82,16 @@ const WorkExperience: React.FC = () => {
           {position.contractor.map(renderContractor)}
         </Box>
       )}
-      <Divider />
+      <Divider my={20} style={{ border: '1px solid black' }} />
     </Box>
   );
 
   return (
-    <AnimatedPaper delay={0.1} className={styles.paper}>
-      <Heading as='h2' size='lg' className={styles.heading}>
-        {t('title').toLocaleUpperCase()}
-      </Heading>
+    <AnimatedPaper
+      title={t('title').toLocaleUpperCase()}
+      delay={0.1}
+      className={styles.paper}
+    >
       <Stack spacing={4}>
         {Object.entries(workExperience).map(([key, work]) => (
           <Box key={key} className={styles.listItem}>

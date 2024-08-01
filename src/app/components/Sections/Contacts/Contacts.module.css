@@ -1,16 +1,6 @@
-.contactPaper {
-  padding: 16px;
-  margin-top: 16px;
-  margin-bottom: 16px;
-  border-radius: 8px;
-  background: #fff;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.title {
-  text-transform: uppercase;
-  text-align: left;
-  margin-bottom: 24px;
+.contactsWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .infoBlock {
@@ -26,10 +16,12 @@
   margin-left: 8px;
 }
 
+/* Стили для текста информации */
 .infoText {
   color: #4a5568; /* gray.600 */
 }
 
+/* Стили для формы */
 .formBlock {
   padding: 16px;
   border-width: 1px;
@@ -46,10 +38,7 @@
   width: 100%;
 }
 
-.input {
-  margin-bottom: 16px;
-}
-
+.input,
 .textarea {
   margin-bottom: 16px;
 }
@@ -79,16 +68,43 @@
   margin-top: 8px;
 }
 
-/* Медиа-запросы для адаптивного дизайна иконок */
 .icon {
   width: 24px;
   height: 24px;
 }
 
 @media (min-width: 48em) {
-  /* Для экранов от 48em и более (md) */
   .icon {
     width: 32px;
     height: 32px;
+  }
+}
+
+@media (max-width: 900px) {
+  .contactPaper {
+    display: block;
+  }
+
+  .infoBlock,
+  .formBlock {
+    margin-bottom: 16px; /* Отступ снизу */
+  }
+}
+
+@media (min-width: 900px) {
+  .contactsWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .infoBlock,
+  .formBlock {
+    flex: 1;
+    margin-right: 16px; /* Отступ справа между блоками */
+  }
+
+  .infoBlock:last-child,
+  .formBlock:last-child {
+    margin-right: 0; /* Убираем отступ у последнего элемента */
   }
 }

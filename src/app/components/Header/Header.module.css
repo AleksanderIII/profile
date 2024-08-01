@@ -1,26 +1,28 @@
 .headerContainer {
+  position: fixed;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
   background-color: #fff;
   border-bottom: 1px solid #ddd;
-  position: relative; /* Нужно для абсолютного позиционирования кнопки в мобильном виде */
+  z-index: 1;
 }
 
 .menuButton {
-  display: none; /* Скрываем кнопку по умолчанию */
-  background-color: #3182ce; /* Цвет кнопки */
-  color: white; /* Цвет текста кнопки */
-  border: none; /* Без границы */
-  padding: 0.5rem 1rem; /* Отступы внутри кнопки */
-  border-radius: 4px; /* Закругленные углы */
-  font-size: 1rem; /* Размер шрифта */
-  cursor: pointer; /* Курсор-указатель */
-  position: absolute; /* Абсолютное позиционирование для кнопки */
-  top: 1rem; /* Отступ сверху */
-  right: 1rem; /* Отступ справа */
-  z-index: 10; /* Должен быть выше остальных элементов */
+  display: none;
+  background-color: #3182ce;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
 }
 
 .menuButton:hover {

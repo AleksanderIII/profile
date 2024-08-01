@@ -10,11 +10,12 @@ const Education: React.FC = () => {
   const keys = ['university', 'magistracy', 'school'] as const;
 
   return (
-    <AnimatedPaper delay={0.1} className={styles.paper}>
+    <AnimatedPaper
+      title={translation('title').toLocaleUpperCase()}
+      delay={0.1}
+      className={styles.paper}
+    >
       <Box>
-        <Heading as='h2' size='lg' className={styles.heading}>
-          {translation('title').toLocaleUpperCase()}
-        </Heading>
         <Stack spacing={4}>
           {keys.map((educationKey) => (
             <Box key={educationKey} className={styles.item}>

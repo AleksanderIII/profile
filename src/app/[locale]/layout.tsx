@@ -36,7 +36,7 @@ export default function LocaleLayout({
       <NextIntlClientProvider locale={locale} messages={messages}>
         <body className={inter.className}>
           <Header />
-          <main>{children}</main>
+          <main style={{ marginTop: '80px' }}>{children}</main>
           <Footer />
         </body>
       </NextIntlClientProvider>

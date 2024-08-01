@@ -1,0 +1,12 @@
+.paper {
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 0.375rem; /* 6px */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(0);
+}
+
+.paperHover {
+  transform: translateY(-10px);
+}

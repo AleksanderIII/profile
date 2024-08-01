@@ -101,6 +101,9 @@
     "Courses": {
         "title": "Certificates",
         "sourceLink": "Certificate Source Link",
+        "date": "Date",
+        "instructor": "Instructor",
+        "platform": "Platform",
         "showMore": "Show More",
         "showLess": "Show Less",
         "AgileScrum": {

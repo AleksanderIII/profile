@@ -100,6 +100,11 @@
     },
     "Courses": {
         "title": "Курсы и сертификаты",
+        "showMore": "Показать больше",
+        "showLess": "Показать меньше",
+        "date": "Дата",
+        "instructor": "Инструктор",
+        "platform": "Платформа",
         "AgileScrum": {
             "title": "Agile Scrum с нуля до Scrum Master",
             "date": "13.06.2023",
@@ -162,7 +167,11 @@
         "location": "Местоположение",
         "phone": "Телефон",
         "emails": "Электронные адреса",
-        "linkedIn": "LinkedIn"
+        "linkedIn": "LinkedIn",
+        "sendMessage": "Отправить сообщение",
+        "email": "Электронный адрес",
+        "message": "Сообщение",
+        "submit": "Отправить"
     },
     "Languages": {
         "title": "Языки",
