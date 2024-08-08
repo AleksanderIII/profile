@@ -1,11 +1,8 @@
 .sidebarContainer {
   flex: 1 1 33%;
-  padding: 2rem;
-  padding-top: 0;
 }
 
 .sidebarContent {
-  padding: 0.25rem;
   background-color: var(--chakra-colors-background);
   color: var(--chakra-colors-text);
   border-radius: 8px;
@@ -15,8 +12,8 @@
 
 .closeButton {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 0;
+  right: 0;
   background-color: var(--chakra-colors-warning);
   color: var(--chakra-colors-warning-contrast);
   display: none;

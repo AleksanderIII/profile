@@ -9,16 +9,19 @@ import {
   DrawerContent,
   DrawerHeader,
   DrawerOverlay,
+  IconButton,
   useDisclosure,
   useMediaQuery,
 } from '@chakra-ui/react';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
+import { HamburgerIcon } from '@chakra-ui/icons';
 import Navigation from '../Navigation/Navigation';
 import LocaleSwitcher from '../LocaleSwitcher/LocaleSwitcher';
 import { Locale, locales, localeNames } from '../../../i18n.config';
 import { useLocale } from 'next-intl';
 import styles from './Header.module.css';
+import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
 
 const Header = ({ onLinkClick }: { onLinkClick?: () => void }) => {
   const t = useTranslations('Navigation');
@@ -26,7 +29,6 @@ const Header = ({ onLinkClick }: { onLinkClick?: () => void }) => {
   const [activeSection, setActiveSection] = useState<string>('');
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  // Определяем, является ли экран мобильным
   const [isMobile] = useMediaQuery('(max-width: 700px)');
 
   const handleClick = (link: string) => {
@@ -45,9 +47,12 @@ const Header = ({ onLinkClick }: { onLinkClick?: () => void }) => {
   return (
     <Box className={styles.headerContainer}>
       {isMobile && !isOpen && (
-        <Button onClick={onOpen} className={styles.menuButton}>
-          Menu
-        </Button>
+        <IconButton
+          aria-label='Open Menu'
+          icon={<HamburgerIcon boxSize={30} />}
+          onClick={onOpen}
+          className={styles.menuButton}
+        />
       )}
       <Drawer isOpen={isOpen} onClose={onClose}>
         <DrawerOverlay />
@@ -72,7 +77,10 @@ const Header = ({ onLinkClick }: { onLinkClick?: () => void }) => {
           mobileView={isMobile}
         />
       )}
-      <LocaleSwitcher locale={locale} />
+      <Box display='flex' alignItems={'center'}>
+        <ThemeSwitcher />
+        <LocaleSwitcher locale={locale} />
+      </Box>
     </Box>
   );
 };

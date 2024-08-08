@@ -10,17 +10,18 @@ import SidebarSection from './partials/SidebarSection/SidebarSection';
 import styles from './Sidebar.module.css';
 
 interface SidebarProps {
-  onClose?: () => void;
+  onClose: () => void;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ onClose }) => {
   const languageTranslations = useTranslations('Languages');
   const skillsTranslations = useTranslations('Skills');
+  const commonTranslations = useTranslations('common');
   return (
     <Box className={styles.sidebarContainer}>
       <Box className={styles.sidebarContent}>
         <Button className={styles.closeButton} onClick={onClose}>
-          Close
+          {commonTranslations('close')}
         </Button>
         <SidebarSection>
           <Intro />
@@ -28,7 +29,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onClose }) => {
         <SidebarSection title={languageTranslations('title')}>
           <Languages />
         </SidebarSection>
-        <SidebarSection title={skillsTranslations('title')}>
+        <SidebarSection title={skillsTranslations('title')} link='/skills'>
           <Skills />
         </SidebarSection>
       </Box>

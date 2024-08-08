@@ -1,0 +1,13 @@
+.switcherContainer {
+  display: flex;
+}
+
+.themeItem {
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.themeItem svg {
+  padding: 5px;
+}

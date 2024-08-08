@@ -7,7 +7,7 @@ import AnimatedPaper from '@/app/components/AnimatedPaper/AnimatedPaper';
 import { certificates } from './constants';
 import styles from './Courses.module.css';
 
-export const Courses = () => {
+const Courses = () => {
   const t = useTranslations('Courses');
 
   return (
@@ -15,6 +15,7 @@ export const Courses = () => {
       <AnimatedPaper
         delay={0.1}
         title={t('title').toLocaleUpperCase()}
+        link={'/courses'}
         className={styles.paper}
       >
         <div className={styles.cardsGrid}>
@@ -53,3 +54,5 @@ export const Courses = () => {
     </Element>
   );
 };
+
+export default Courses;

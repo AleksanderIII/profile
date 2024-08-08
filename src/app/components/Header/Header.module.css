@@ -12,25 +12,23 @@
 
 .menuButton {
   display: none;
-  background-color: #3182ce;
   color: white;
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 10px;
   border-radius: 4px;
   font-size: 1rem;
   cursor: pointer;
   position: absolute;
-  top: 1rem;
-  right: 1rem;
   z-index: 10;
+  background-color: #48494b;
 }
 
 .menuButton:hover {
-  background-color: #2b6cb0; /* Цвет кнопки при наведении */
+  background-color: #b0c8e2;
 }
 
 .menuButton:focus {
-  outline: none; /* Убираем обводку при фокусе */
+  outline: none;
 }
 
 .navContainer {
@@ -39,33 +37,32 @@
 
 @media (max-width: 700px) {
   .menuButton {
-    display: inline-block; /* Показываем кнопку на мобильных устройствах */
+    display: inline-block;
   }
 
   .navContainer {
-    display: none; /* Скрываем навигацию по умолчанию на мобильных */
+    display: none;
   }
 
-  /* Фон для мобильного вида */
   .mobileMenu {
-    background-color: #f5f5f5; /* Светлый фон для мобильного меню */
-    padding: 1rem; /* Отступы вокруг содержимого */
-    border-top: 1px solid #ddd; /* Граница сверху */
-    position: fixed; /* Фиксированное положение */
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-top: 1px solid #ddd;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 9; /* Должен быть ниже кнопки меню */
+    z-index: 9;
   }
 }
 
 @media (min-width: 700px) {
   .menuButton {
-    display: none; /* Скрываем кнопку на десктопе */
+    display: none;
   }
 
   .navContainer {
-    display: flex; /* Показываем навигацию на десктопе */
+    display: flex;
   }
 }

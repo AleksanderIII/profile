@@ -1,10 +1,9 @@
 .container {
-  display: flex;
-  position: relative; /* Для правильного позиционирования кнопки меню */
+  position: relative;
 }
 
 .sidebar {
-  width: 33%; /* Для экранов более 700px */
+  width: 33%;
   background-color: #f0f0f0;
   border-right: 1px solid #ddd;
   padding: 2rem;
@@ -24,23 +23,18 @@
 }
 
 .menuButton {
-  z-index: 1000;
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  background-color: #3182ce; /* Цвет кнопки меню */
-  color: #fff; /* Цвет текста кнопки */
-  border-radius: 4px; /* Скругление углов кнопки */
+  display: none !important;
 }
 
 @media (max-width: 700px) {
   .sidebar {
     width: 100%;
-    position: fixed; /* Фиксируем боковую панель при прокрутке */
+    padding: 1rem;
+    position: fixed;
     top: 0;
     left: 0;
     transform: translateX(-100%);
-    z-index: 900; /* Устанавливаем z-index ниже, чем у кнопки меню */
+    z-index: 900;
   }
 
   .sidebarOpen {
@@ -48,6 +42,20 @@
   }
 
   .mainContent {
-    margin-left: 0; /* Убираем отступ для основной части */
+    margin-left: 0;
   }
+
+  .menuButton {
+    display: block !important;
+    z-index: 1000;
+    position: fixed !important;
+    top: 50%;
+    left: 0px;
+    height: 30%;
+    transform: translateY(-50%);
+    border: 1px solid rgb(162, 162, 162);
+  }
+}
+
+@media (min-width: 700px) {
 }

@@ -1,23 +1,116 @@
-'use client';
+import { Box, Text, Stack, Flex, Divider } from '@chakra-ui/react';
 
-import React from 'react';
-import {
-  Box,
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
-  Text,
-  Stack,
-  Divider,
-  Flex,
-} from '@chakra-ui/react';
-import { StarIcon } from '@chakra-ui/icons';
-import { hardSkills, softSkills } from '../../constants';
+export const hardSkills = [
+  {
+    name: 'Frontend',
+    id: 'Frontend',
+    data: [
+      { name: 'React', rating: 5 },
+      { name: 'Javascript', rating: 5 },
+      { name: 'Typescript', rating: 5 },
+      { name: 'Angular', rating: 3 },
+      { name: 'Next.js', rating: 3 },
+    ],
+  },
+  {
+    name: 'Styling',
+    id: 'Styling',
+    data: [
+      { name: 'CSS', rating: 5 },
+      { name: 'LESS', rating: 5 },
+      { name: 'Tailwind', rating: 3 },
+    ],
+  },
+  {
+    name: 'Backend',
+    id: 'Backend',
+    data: [
+      { name: 'Node.js', rating: 4 },
+      { name: 'Express.js', rating: 4 },
+      { name: 'MongoDB', rating: 3 },
+      { name: 'PostgreSQL', rating: 3 },
+    ],
+  },
+  {
+    name: 'Other',
+    id: 'Other',
+    data: [
+      { name: 'Redux.js', rating: 5 },
+      { name: 'Redux Thunk', rating: 5 },
+      { name: 'Unit Testing (Jest)', rating: 4 },
+      { name: 'HTML', rating: 5 },
+      { name: 'Webpack', rating: 5 },
+      { name: 'Clean Coding', rating: 4 },
+      { name: 'REST', rating: 5 },
+      { name: 'Debugging', rating: 5 },
+      { name: 'Gitlab', rating: 5 },
+      { name: 'Prettier', rating: 5 },
+      { name: 'Highcharts', rating: 5 },
+      { name: 'ESLint', rating: 5 },
+      { name: 'Date-fns', rating: 4 },
+      { name: 'Moment.js', rating: 4 },
+      { name: 'PDF.js', rating: 4 },
+      { name: 'D3.js', rating: 3 },
+      { name: 'GraphQL', rating: 4 },
+      { name: 'NgRx', rating: 3 },
+      { name: 'Video.js', rating: 3 },
+      { name: 'Chart.js', rating: 4 },
+      { name: 'jQuery', rating: 1 },
+      { name: 'Docker', rating: 1 },
+      { name: 'AWS', rating: 1 },
+    ],
+  },
+];
 
-// Компонент для отображения одного навыка
-const SkillItem = ({ skill }) => (
+export const softSkills = [
+  {
+    name: 'Management',
+    id: 'Management',
+    data: [
+      { name: 'Teamwork', rating: 5 },
+      { name: 'Business English', rating: 5 },
+      { name: 'Scrum', rating: 5 },
+      { name: 'Kanban', rating: 5 },
+      { name: 'Project Management', rating: 3 },
+    ],
+  },
+  {
+    name: 'Personal',
+    id: 'Personal',
+    data: [
+      { name: 'Mentoring', rating: 4 },
+      { name: 'Presentation Skills', rating: 4 },
+      { name: 'Problem Solving', rating: 4 },
+      { name: 'Organization', rating: 5 },
+      { name: 'Decision Making', rating: 4 },
+    ],
+  },
+];
+
+const Star = ({ filled }: { filled: boolean }) => (
+  <svg
+    width='16'
+    height='16'
+    viewBox='0 0 24 24'
+    fill={filled ? 'yellow' : 'gray'}
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path d='M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z' />
+  </svg>
+);
+
+interface Skill {
+  name: string;
+  rating: number;
+}
+
+interface SubCategory {
+  id: string;
+  name: string;
+  data: Skill[];
+}
+
+const SkillItem = ({ skill }: { skill: Skill }) => (
   <Flex
     align='center'
     justify='space-between'
@@ -29,122 +122,47 @@ const SkillItem = ({ skill }) => (
     <Text fontWeight='medium'>{skill.name}</Text>
     <Box>
       {[...Array(5)].map((_, index) => (
-        <StarIcon
-          key={index}
-          color={skill.rating > index ? 'yellow.400' : 'gray.300'}
-        />
+        <Star key={index} filled={skill.rating > index} />
       ))}
     </Box>
   </Flex>
 );
 
-// Компонент для отображения подкатегории
-const SkillSubCategory = ({ subCategory }) => (
-  <AccordionItem key={subCategory.id} border='none' mb={4}>
-    {({ isExpanded }) => (
-      <>
-        <AccordionButton
-          _expanded={{ bg: 'gray.100', borderColor: 'gray.200' }}
-          p={4}
-          borderRadius='md'
-          _hover={{ bg: 'gray.50' }}
-        >
-          <Box flex='1' textAlign='left'>
-            <Text fontWeight='medium' fontSize='lg'>
-              {subCategory.name.toUpperCase()}
-            </Text>
-          </Box>
-          <AccordionIcon />
-        </AccordionButton>
-        <AccordionPanel
-          p={4}
-          borderTopWidth='1px'
-          borderColor='gray.200'
-          display={isExpanded ? 'block' : 'none'}
-        >
-          <Stack spacing={4}>
-            {subCategory.data.map((skill) => (
-              <SkillItem key={skill.name} skill={skill} />
-            ))}
-          </Stack>
-        </AccordionPanel>
-      </>
-    )}
-  </AccordionItem>
-);
-
-// Компонент для отображения категории
-const SkillCategory = ({ category }) => (
-  <Accordion
-    key={category.id}
-    allowToggle
-    borderRadius='md'
-    overflow='hidden'
-    mb={4}
-  >
-    <AccordionItem border='none'>
-      {({ isExpanded }) => (
-        <>
-          <AccordionButton
-            _expanded={{ bg: 'gray.100' }}
-            p={4}
-            borderRadius='md'
-            _hover={{ bg: 'gray.50' }}
-          >
-            <Box flex='1' textAlign='left'>
-              <Text fontWeight='bold' fontSize='xl'>
-                {category.name.toUpperCase()}
-              </Text>
-            </Box>
-            <AccordionIcon />
-          </AccordionButton>
-          <AccordionPanel p={0}>
-            <Stack spacing={0}>
-              {category.subCategories.map((subCategory) => (
-                <SkillSubCategory
-                  key={subCategory.id}
-                  subCategory={subCategory}
-                />
-              ))}
-            </Stack>
-          </AccordionPanel>
-        </>
-      )}
-    </AccordionItem>
-  </Accordion>
-);
-
-// Основной компонент
-const Skills = () => (
-  <Box
-    p={4}
-    borderWidth='1px'
-    borderRadius='md'
-    borderColor='gray.200'
-    boxShadow='md'
-    mb={4}
-  >
-    <Flex align='center' mb={4}>
-      <Text fontSize='2xl' fontWeight='bold'>
-        Skills
-      </Text>
-    </Flex>
-    <Divider mb={4} />
-    <SkillCategory
-      category={{
-        name: 'Hard Skills',
-        id: 'hardSkills',
-        subCategories: hardSkills,
-      }}
-    />
-    <SkillCategory
-      category={{
-        name: 'Soft Skills',
-        id: 'softSkills',
-        subCategories: softSkills,
-      }}
-    />
+const SkillCategory = ({ category }: { category: SubCategory }) => (
+  <Box mb={6}>
+    <Text fontWeight='bold' fontSize='xl' mb={4}>
+      {category.name.toUpperCase()}
+    </Text>
+    <Stack spacing={4}>
+      {category.data.map((skill) => (
+        <SkillItem key={skill.name} skill={skill} />
+      ))}
+    </Stack>
   </Box>
 );
 
-export default Skills;
+const SkillsPage = () => {
+  return (
+    <Box p={4}>
+      <Box mb={6}>
+        <Text fontWeight='bold' fontSize='2xl' mb={4}>
+          Hard Skills
+        </Text>
+        {hardSkills.map((category) => (
+          <SkillCategory key={category.id} category={category} />
+        ))}
+      </Box>
+      <Divider my={6} />
+      <Box mb={6}>
+        <Text fontWeight='bold' fontSize='2xl' mb={4}>
+          Soft Skills
+        </Text>
+        {softSkills.map((category) => (
+          <SkillCategory key={category.id} category={category} />
+        ))}
+      </Box>
+    </Box>
+  );
+};
+
+export default SkillsPage;

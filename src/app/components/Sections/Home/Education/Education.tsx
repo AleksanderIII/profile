@@ -2,8 +2,8 @@ import React from 'react';
 import { Box, Heading, Text, Stack } from '@chakra-ui/react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import AnimatedPaper from '../../AnimatedPaper/AnimatedPaper';
-import styles from './Education.module.css'; // Импорт стилей из CSS Modules
+import AnimatedPaper from '../../../AnimatedPaper/AnimatedPaper';
+import styles from './Education.module.css';
 
 const Education: React.FC = () => {
   const translation = useTranslations('Education');
@@ -12,6 +12,7 @@ const Education: React.FC = () => {
   return (
     <AnimatedPaper
       title={translation('title').toLocaleUpperCase()}
+      link='/education'
       delay={0.1}
       className={styles.paper}
     >

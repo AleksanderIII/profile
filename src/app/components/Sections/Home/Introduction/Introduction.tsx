@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Heading } from '@chakra-ui/react';
 import { useTranslations } from 'next-intl';
-import AnimatedPaper from '../../AnimatedPaper/AnimatedPaper';
+import AnimatedPaper from '../../../AnimatedPaper/AnimatedPaper';
 
 import styles from './Introduction.module.css';
 

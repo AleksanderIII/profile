@@ -1,6 +1,7 @@
 {
     "common": {
-        "name": "Aleksandr Matyushik"
+        "name": "Aleksandr Matyushik",
+        "close": "Close"
     },
     "SideSummary": {
         "name": "Aleksandr Matyushik",
@@ -16,6 +17,7 @@
         "heading": "Heading"
     },
     "Navigation": {
+        "title": "Navigation",
         "titles": {
             "home": "Home",
             "education": "Education",

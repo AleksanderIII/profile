@@ -91,6 +91,7 @@ const WorkExperience: React.FC = () => {
       title={t('title').toLocaleUpperCase()}
       delay={0.1}
       className={styles.paper}
+      link='/work'
     >
       <Stack spacing={4}>
         {Object.entries(workExperience).map(([key, work]) => (
