@@ -1,12 +1,14 @@
 'use client';
 
 import { Box, Container, useDisclosure, IconButton } from '@chakra-ui/react';
+import { FaGlobe, FaGraduationCap } from 'react-icons/fa';
 import { ChevronRightIcon } from '@chakra-ui/icons';
 
 import Sidebar from '../components/Sidebar/Sidebar';
 import Main from '../components/Sections/Home';
 
 import styles from './page.module.css';
+import Image from 'next/image';
 
 const Profile = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -14,12 +16,17 @@ const Profile = () => {
   return (
     <Container maxW='container.xl' p={0} className={styles.container}>
       {isOpen ? null : (
-        <IconButton
-          aria-label='Open Menu'
-          icon={<ChevronRightIcon boxSize={30} />}
-          onClick={isOpen ? onClose : onOpen}
-          className={styles.menuButton}
-        />
+        <Box className={styles.sidePanel} onClick={isOpen ? onClose : onOpen}>
+          <Image
+            className={styles.avatar}
+            src='/avatar.png'
+            alt='Avatar'
+            height={50}
+            width={50}
+          />
+          <FaGraduationCap className='icon' />
+          <FaGlobe className='icon' />
+        </Box>
       )}
 
       <Box display='flex'>

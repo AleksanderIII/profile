@@ -4,10 +4,10 @@ import { useTranslations } from 'next-intl';
 import { format } from 'date-fns';
 import Image from 'next/image';
 
-import AnimatedPaper from '../../AnimatedPaper/AnimatedPaper';
 import { workExperience } from './constants';
 
 import styles from './WorkExperience.module.css';
+import AnimatedPaper from '@/app/components/AnimatedPaper/AnimatedPaper';
 
 interface IPosition {
   company: string;

@@ -12,7 +12,7 @@ const Intro = () => {
   return (
     <Box className={styles.introContainer}>
       <Image
-        src='/avatar.jpg'
+        src='/avatar.png'
         alt='Avatar'
         height={150}
         width={150}
