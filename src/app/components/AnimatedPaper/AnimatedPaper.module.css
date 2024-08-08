@@ -10,3 +10,10 @@
 .paperHover {
   transform: translateY(-10px);
 }
+
+@media (max-width: 700px) {
+  .paper {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
