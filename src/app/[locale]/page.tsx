@@ -2,7 +2,6 @@
 
 import { Box, Container, useDisclosure, IconButton } from '@chakra-ui/react';
 import { FaGlobe, FaGraduationCap } from 'react-icons/fa';
-import { ChevronRightIcon } from '@chakra-ui/icons';
 
 import Sidebar from '../components/Sidebar/Sidebar';
 import Main from '../components/Sections/Home';

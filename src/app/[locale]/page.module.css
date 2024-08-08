@@ -40,6 +40,8 @@
 
 @media (max-width: 700px) {
   .sidebar {
+    height: 100vh;
+    overflow-y: auto;
     width: 100%;
     padding: 1rem;
     position: fixed;
@@ -67,7 +69,4 @@
     transform: translateY(-50%);
     border: 1px solid rgb(217, 217, 217);
   }
-}
-
-@media (min-width: 700px) {
 }
