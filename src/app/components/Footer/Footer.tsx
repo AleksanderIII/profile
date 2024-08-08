@@ -8,19 +8,11 @@ import FooterCopyright from './partials/FooterCopyright';
 import FooterContact from './partials/FooterContact';
 import styles from './Footer.module.css';
 
-interface FooterProps {
-  backgroundColor: string;
-  textColor: string;
-}
-
-const Footer: React.FC<FooterProps> = ({ backgroundColor, textColor }) => {
+const Footer = () => {
   const t = useTranslations('Footer');
 
   return (
-    <Box
-      as='footer'
-      className={`${styles.footer} ${styles[backgroundColor]} ${styles[textColor]}`}
-    >
+    <Box as='footer' className={styles.footer}>
       <Container>
         <Grid className={styles.grid}>
           <FooterSection title={t('aboutMe')}>
