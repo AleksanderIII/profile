@@ -1,6 +1,9 @@
+'use client';
+
 import { Box } from '@chakra-ui/react';
 import NavItem from './NavItem/NavItem';
 import styles from './Navigation.module.css';
+import { usePathname } from '@/i18n.config';
 
 interface NavigationItem {
   name: string;
@@ -14,6 +17,8 @@ interface NavigationProps {
 }
 
 const Navigation = ({ items, mobileView = false }: NavigationProps) => {
+  const pathname = usePathname();
+
   return (
     <Box
       className={`${styles.navContainer} ${
@@ -24,7 +29,7 @@ const Navigation = ({ items, mobileView = false }: NavigationProps) => {
         <NavItem
           key={item.link}
           item={item}
-          isActive={false}
+          isActive={pathname === item.link}
           mobileView={mobileView}
         />
       ))}

@@ -16,7 +16,7 @@ const Intro = () => {
         alt='Avatar'
         height={150}
         width={150}
-        className={styles.avatar}
+        className={`${styles.avatar} avatar`}
       />
       <Text className={styles.name}>{t('name')}</Text>
       <Text className={styles.title}>{t('title')}</Text>

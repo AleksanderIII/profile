@@ -28,3 +28,11 @@ body.chakra-ui-dark {
 body.chakra-ui-light {
   background-color: #fff;
 }
+
+.chakra-ui-dark .avatar {
+  background-color: rgb(75, 58, 36);
+}
+
+.chakra-ui-light .avatar {
+  background-color: rgb(250, 221, 176);
+}
