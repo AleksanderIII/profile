@@ -17,14 +17,8 @@
   border-radius: 4px;
   font-size: 1rem;
   cursor: pointer;
-  position: absolute;
   z-index: 10;
 }
-
-.menuButton:hover {
-  background-color: #b0c8e2;
-}
-
 .menuButton:focus {
   outline: none;
 }

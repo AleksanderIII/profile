@@ -27,8 +27,8 @@ const Profile = () => {
     <Container maxW='container.xl' p={0} className={styles.container}>
       {isOpen ? null : (
         <Box
+          bg={sidebarBg}
           className={styles.sidePanel}
-          borderColor={borderColor}
           onClick={isOpen ? onClose : onOpen}
         >
           <Image

@@ -24,8 +24,3 @@
   gap: 1rem;
   margin-top: 2rem;
 }
-
-.socialLink {
-  color: var(--chakra-colors-text);
-  text-decoration: none;
-}

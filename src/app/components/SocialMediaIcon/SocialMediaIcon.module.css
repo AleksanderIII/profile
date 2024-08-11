@@ -1,0 +1,10 @@
+.socialLink {
+  color: orange;
+  text-decoration: none;
+  opacity: 1;
+}
+
+.socialLink:hover {
+  opacity: 0.5;
+  transition: opacity 1s;
+}

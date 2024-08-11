@@ -24,30 +24,14 @@ const WorkExperience: React.FC = () => {
   const t = useTranslations('WorkExperience');
   const dividerColor = useColorModeValue('light.divider', 'dark.divider');
 
-  const renderContractor = (contractor: IPosition) => (
-    <Box key={contractor.company} className={styles.contractor}>
-      <Image
-        src={contractor.logo}
-        alt={`${t(contractor.company)} logo`}
-        width={contractor.size.width * 0.5}
-        height={contractor.size.height * 0.5}
-        className={styles.contractorLogo}
-      />
-      <Box className={styles.contractorText}>
-        <Text fontSize='sm'>
-          {`${t(contractor.position)} at ${t(contractor.company)}`}
-        </Text>
-        <Text fontSize='xs' color='gray.500'>
-          {`${format(contractor.start, 'MMMM yyyy')} - ${format(
-            contractor.end,
-            'MMMM yyyy'
-          )}`}
-        </Text>
-        <Text fontSize='xs' color='gray.500'>
-          {t(contractor.location)}
-        </Text>
-      </Box>
-    </Box>
+  const renderContractor = (
+    contractor: IPosition,
+    isLastContactor: boolean
+  ) => (
+    <Text key={contractor.company} as='span' fontSize='sm'>
+      {t(contractor.company)}
+      {isLastContactor ? '' : ','}{' '}
+    </Text>
   );
 
   const renderPosition = (position: IPosition) => (
@@ -84,7 +68,14 @@ const WorkExperience: React.FC = () => {
           <Text fontSize='sm' fontWeight='bold'>
             {t('contractorPositions').toLocaleUpperCase()}
           </Text>
-          {position.contractor.map(renderContractor)}
+          {position.contractor.map((item, index) =>
+            renderContractor(
+              item,
+              position.contractor
+                ? index === position.contractor?.length - 1
+                : true
+            )
+          )}
         </Box>
       )}
     </Box>
@@ -97,7 +88,7 @@ const WorkExperience: React.FC = () => {
       className={styles.paper}
       link='/work'
     >
-      <Stack spacing={4}>
+      <Stack>
         {Object.entries(workExperience).map(([key, work]) => (
           <Box key={key} className={styles.listItem}>
             {renderPosition(work)}
@@ -106,8 +97,11 @@ const WorkExperience: React.FC = () => {
                 <Text fontSize='sm' fontWeight='bold'>
                   {t('contractorPositions').toLocaleUpperCase()}
                 </Text>
-                {work.contactor.map((contactorWork) =>
-                  renderContractor(contactorWork)
+                {work.contactor.map((contactorWork, index) =>
+                  renderContractor(
+                    contactorWork,
+                    index === work.contactor.length - 1
+                  )
                 )}
               </Box>
             )}
