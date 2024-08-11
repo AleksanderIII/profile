@@ -19,23 +19,15 @@ interface NavItemProps {
   mobileView?: boolean;
 }
 
-const iconMap: { [key: string]: JSX.Element } = {
-  home: <FaHome />,
-  school: <FaSchool />,
-  briefcase: <FaBriefcase />,
-  envelope: <FaEnvelope />,
-  certificate: <FaCertificate />,
-};
-
 const NavItem = ({ item, isActive, mobileView = false }: NavItemProps) => {
   return (
     <Box
+      mx={1}
       className={`${styles.navItem} ${isActive ? styles.active : ''}`}
       width='100%'
     >
       <Link href={item.link}>
         <Flex align='center' className={styles.navLink}>
-          {iconMap[item.icon]}
           <Text ml={1}>{item.name}</Text>
         </Flex>
       </Link>

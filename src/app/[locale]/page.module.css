@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.main {
+  margin-top: 4rem;
+}
+
 .sidebar {
   width: 33%;
   min-width: 350px;

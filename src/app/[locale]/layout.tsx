@@ -8,6 +8,8 @@ import Footer from '../components/Footer/Footer';
 import '../globals.css';
 import { Providers } from '../Providers';
 
+import styles from './page.module.css';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -40,7 +42,7 @@ export default function LocaleLayout({
         <body className={inter.className}>
           <Providers>
             <Header />
-            <main style={{ marginTop: '100px' }}>{children}</main>
+            <main className={styles.main}>{children}</main>
             <Footer />
           </Providers>
         </body>

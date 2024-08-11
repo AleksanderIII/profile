@@ -1,6 +1,6 @@
 'use client';
 
-import { FormControl, Select } from '@chakra-ui/react';
+import { FormControl, useColorModeValue, Button } from '@chakra-ui/react';
 import {
   useRouter,
   localeNames,
@@ -8,26 +8,33 @@ import {
   Locale,
   usePathname,
 } from '@/i18n.config';
-import styles from './LocaleSwitcher.module.css'; // Импорт стилей
+import styles from './LocaleSwitcher.module.css';
 
 const LocaleSwitcher = ({ locale }: { locale: string }) => {
   const pathname = usePathname();
   const router = useRouter();
+  const bg = useColorModeValue('light.cardBackground', 'dark.cardBackground');
 
-  const changeLocale = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const newLocale = event.target.value as Locale;
-    router.replace(pathname, { locale: newLocale });
+  const changeLocale = (loc: Locale) => {
+    router.replace(pathname, { locale: loc });
   };
 
   return (
     <FormControl className={styles.formControl}>
-      <Select value={locale} onChange={changeLocale} className={styles.select}>
+      <div className={styles.switcher}>
         {locales.map((loc) => (
-          <option key={loc} value={loc} className={styles.option}>
+          <Button
+            key={loc}
+            bg={bg}
+            onClick={() => changeLocale(loc)}
+            className={`${styles.button} ${
+              locale === loc ? styles.active : ''
+            }`}
+          >
             {localeNames[loc]}
-          </option>
+          </Button>
         ))}
-      </Select>
+      </div>
     </FormControl>
   );
 };

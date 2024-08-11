@@ -10,7 +10,13 @@
 
 .active {
   background-color: rgb(185, 128, 22);
-  color: #ffffff;
+  color: #f8e8bc;
+}
+
+.navItem:hover {
+  background-color: rgb(185, 128, 22);
+  color: #f8e8bc;
+  opacity: 0.5;
 }
 
 .icon {

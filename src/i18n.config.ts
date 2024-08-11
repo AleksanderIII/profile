@@ -6,7 +6,7 @@ export const locales: Locale[] = ['en', 'ru'];
 
 export const localeNames: Record<Locale, string> = {
   en: 'English',
-  ru: 'Russian',
+  ru: 'Русский',
 };
 
 export const { Link, usePathname, useRouter } = createSharedPathnamesNavigation(

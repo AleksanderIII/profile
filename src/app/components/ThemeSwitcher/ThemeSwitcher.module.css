@@ -5,6 +5,7 @@
 .themeItem {
   cursor: pointer;
   border-radius: 50%;
+  background-color: orange;
 }
 
 .themeItem svg {
