@@ -32,7 +32,7 @@ const Profile = () => {
           onClick={isOpen ? onClose : onOpen}
         >
           <Image
-            className={styles.avatar}
+            className={`${styles.avatar} avatar`}
             src='/avatar.png'
             alt='Avatar'
             height={50}
