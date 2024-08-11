@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button } from '@chakra-ui/react';
+import { Box, Button, useColorModeValue } from '@chakra-ui/react';
 import { useTranslations } from 'next-intl';
 
 import Intro from './partials/Intro/Intro';
@@ -17,8 +17,15 @@ const Sidebar: React.FC<SidebarProps> = ({ onClose }) => {
   const languageTranslations = useTranslations('Languages');
   const skillsTranslations = useTranslations('Skills');
   const commonTranslations = useTranslations('common');
+
+  const sidebarBg = useColorModeValue('light.background', 'dark.background');
+  const sidebarColor = useColorModeValue('light.text', 'dark.text');
   return (
-    <Box className={styles.sidebarContainer}>
+    <Box
+      bg={sidebarBg}
+      color={sidebarColor}
+      className={styles.sidebarContainer}
+    >
       <Box className={styles.sidebarContent}>
         <Button className={styles.closeButton} onClick={onClose}>
           {commonTranslations('close')}

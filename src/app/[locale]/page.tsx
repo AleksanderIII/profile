@@ -1,6 +1,12 @@
 'use client';
 
-import { Box, Container, useDisclosure, IconButton } from '@chakra-ui/react';
+import {
+  Box,
+  Container,
+  useDisclosure,
+  IconButton,
+  useColorModeValue,
+} from '@chakra-ui/react';
 import { FaGlobe, FaGraduationCap } from 'react-icons/fa';
 
 import Sidebar from '../components/Sidebar/Sidebar';
@@ -12,10 +18,20 @@ import Image from 'next/image';
 const Profile = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const sidebarBg = useColorModeValue(
+    'light.mainBackground',
+    'dark.mainBackground'
+  );
+  const borderColor = useColorModeValue('light.border', 'dark.border');
+
   return (
     <Container maxW='container.xl' p={0} className={styles.container}>
       {isOpen ? null : (
-        <Box className={styles.sidePanel} onClick={isOpen ? onClose : onOpen}>
+        <Box
+          className={styles.sidePanel}
+          borderColor={borderColor}
+          onClick={isOpen ? onClose : onOpen}
+        >
           <Image
             className={styles.avatar}
             src='/avatar.png'
@@ -28,7 +44,7 @@ const Profile = () => {
         </Box>
       )}
 
-      <Box display='flex'>
+      <Box display='flex' bg={sidebarBg}>
         <Box
           as='aside'
           className={`${styles.sidebar} ${isOpen ? styles.sidebarOpen : ''}`}

@@ -1,5 +1,12 @@
 import React from 'react';
-import { Box, Heading, Text, Stack, Divider } from '@chakra-ui/react';
+import {
+  Box,
+  Heading,
+  Text,
+  Stack,
+  Divider,
+  useColorModeValue,
+} from '@chakra-ui/react';
 import { useTranslations } from 'next-intl';
 import { format } from 'date-fns';
 import Image from 'next/image';
@@ -22,6 +29,7 @@ interface IPosition {
 
 const WorkExperience: React.FC = () => {
   const t = useTranslations('WorkExperience');
+  const borderColor = useColorModeValue('light.divider', 'dark.divider');
 
   const renderContractor = (contractor: IPosition) => (
     <Box key={contractor.company} className={styles.contractor}>
@@ -82,7 +90,7 @@ const WorkExperience: React.FC = () => {
           {position.contractor.map(renderContractor)}
         </Box>
       )}
-      <Divider my={20} style={{ border: '1px solid black' }} />
+      <Divider my={5} color={borderColor} style={{ border: '1px solid' }} />
     </Box>
   );
 

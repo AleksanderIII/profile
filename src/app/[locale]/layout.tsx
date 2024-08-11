@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { Inter } from 'next/font/google';
+
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 
 import '../globals.css';
+import { Providers } from '../Providers';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -31,13 +33,16 @@ export default function LocaleLayout({
   params: { locale: string };
 }>) {
   const messages = useMessages();
+
   return (
     <html lang={locale}>
       <NextIntlClientProvider locale={locale} messages={messages}>
         <body className={inter.className}>
-          <Header />
-          <main style={{ marginTop: '80px' }}>{children}</main>
-          <Footer />
+          <Providers>
+            <Header />
+            <main style={{ marginTop: '80px' }}>{children}</main>
+            <Footer />
+          </Providers>
         </body>
       </NextIntlClientProvider>
     </html>

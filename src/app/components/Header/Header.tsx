@@ -10,6 +10,7 @@ import {
   DrawerHeader,
   DrawerOverlay,
   IconButton,
+  useColorModeValue,
   useDisclosure,
   useMediaQuery,
 } from '@chakra-ui/react';
@@ -44,8 +45,17 @@ const Header = ({ onLinkClick }: { onLinkClick?: () => void }) => {
     { name: t('titles.contacts'), icon: 'envelope', link: 'contact' },
   ];
 
+  const headerBg = useColorModeValue('light.background', 'dark.background');
+  const headerBorder = useColorModeValue('light.border', 'dark.border');
+  const headerColor = useColorModeValue('light.text', 'dark.text');
+
   return (
-    <Box className={styles.headerContainer}>
+    <Box
+      bg={headerBg}
+      color={headerColor}
+      borderColor={headerBorder}
+      className={styles.headerContainer}
+    >
       {isMobile && !isOpen && (
         <IconButton
           aria-label='Open Menu'

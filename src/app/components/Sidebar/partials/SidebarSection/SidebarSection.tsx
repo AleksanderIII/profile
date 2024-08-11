@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Divider, Heading } from '@chakra-ui/react';
+import { Box, Divider, Heading, useColorModeValue } from '@chakra-ui/react';
 import Link from 'next/link';
 
 interface SidebarSectionProps {
@@ -14,12 +14,14 @@ const SidebarSection: React.FC<SidebarSectionProps> = ({
   children,
   link,
 }) => {
+  const dividerColor = useColorModeValue('light.divider', 'dark.divider');
+
   return (
-    <Box>
+    <Box px={8}>
       {link ? (
         <Link href={link}>
           <Heading as='h2' size='md' mb={8}>
-            {title}
+            {title?.toUpperCase()}
           </Heading>
         </Link>
       ) : (
@@ -28,7 +30,7 @@ const SidebarSection: React.FC<SidebarSectionProps> = ({
         </Heading>
       )}
       {children}
-      <Divider my={20} style={{ border: '1px solid black' }} />
+      <Divider my={10} color={dividerColor} style={{ border: '1px solid' }} />
     </Box>
   );
 };

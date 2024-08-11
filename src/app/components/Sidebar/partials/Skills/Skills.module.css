@@ -1,6 +1,5 @@
 .skillsContainer {
   padding: 1rem;
-  border: 1px solid #e2e8f0; /* Gray 200 */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
@@ -9,13 +8,13 @@
 .subCategoryTitle {
   font-size: 1rem;
   font-weight: 500;
-  color: #2d3748; /* Text color */
+  color: #2d3748;
 }
 
 .categoryTitle {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #2d3748; /* Text color */
+  color: #2d3748;
 }
 
 .skillItem {
@@ -23,12 +22,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 0;
-  border-bottom: 1px solid #e2e8f0; /* Gray 200 */
 }
 
 .skillName {
   font-weight: 500;
-  color: #2d3748; /* Text color */
+  color: #2d3748;
 }
 
 .skillRating {

@@ -1,7 +1,3 @@
-.languagesContainer {
-  border-bottom: 1px solid var(--chakra-colors-divider);
-}
-
 .languageItem {
   display: grid;
   grid-template-columns: auto 110px 40px;

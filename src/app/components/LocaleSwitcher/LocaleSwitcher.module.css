@@ -1,44 +1,37 @@
 .formControl {
   width: auto;
-  padding: 0.5rem; /* Отступ вокруг компонента */
-  display: inline-block; /* Чтобы селектор не растягивался на всю ширину */
-  position: relative; /* Для позиционирования кастомной стрелки */
+  padding: 0.5rem;
+  display: inline-block;
+  position: relative;
 }
 
 .select {
-  background-color: #ffffff; /* Белый фон для селектора */
-  border: 1px solid #ddd; /* Светлая граница */
-  border-radius: 8px; /* Более закругленные углы */
-  padding: 0.5rem 1.5rem; /* Больше отступа для удобства */
-  font-size: 1rem; /* Размер шрифта */
-  color: #333; /* Цвет текста */
-  cursor: pointer; /* Указатель курсора */
-  transition: border-color 0.3s ease, background-color 0.3s ease; /* Плавные переходы */
-  position: relative; /* Для кастомной стрелки */
-  appearance: none; /* Убираем стандартное оформление */
-  -webkit-appearance: none; /* Убираем стандартное оформление для WebKit браузеров */
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .select::-ms-expand {
-  display: none; /* Убираем стандартную стрелку для IE/Edge */
+  display: none;
 }
 
 .select::after {
-  content: '▼'; /* Кастомная стрелка */
+  content: '▼';
   position: absolute;
-  right: 0.75rem; /* Расположение стрелки */
+  right: 0.75rem;
   top: 50%;
   transform: translateY(-50%);
-  pointer-events: none; /* Не перекрывает клики */
-  font-size: 0.875rem; /* Размер кастомной стрелки */
+  pointer-events: none;
+  font-size: 0.875rem;
 }
 
 .option {
-  padding: 0.5rem 1rem; /* Отступ внутри опций */
-  background-color: #fff; /* Белый фон для опций */
-  border-bottom: 1px solid #eee; /* Легкая граница между опциями */
+  padding: 0.5rem 1rem;
 }
 
 .option:hover {
-  background-color: #f0f0f0; /* Цвет фона при наведении */
+  background-color: #f0f0f0;
 }

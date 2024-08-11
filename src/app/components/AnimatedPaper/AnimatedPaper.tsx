@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, Heading } from '@chakra-ui/react';
-import styles from './AnimatedPaper.module.css';
+import { Box, Heading, useColorModeValue } from '@chakra-ui/react';
 import Link from 'next/link';
 
 interface AnimatedPaperProps {
@@ -18,20 +17,31 @@ const AnimatedPaper: React.FC<AnimatedPaperProps> = ({
   className,
   title,
 }) => {
+  const backgroundColor = useColorModeValue(
+    'light.background',
+    'dark.background'
+  );
+  const textColor = useColorModeValue('light.text', 'dark.text');
+
   return (
     <Box
-      className={`${styles.paper} ${className}`}
+      className={className}
       style={{ transitionDelay: `${delay}s` }}
-      _hover={{ className: styles.paperHover }}
+      p={4}
+      m={4}
+      borderRadius='md'
+      boxShadow='md'
+      bg={backgroundColor}
+      color={textColor}
     >
       {link ? (
         <Link href={link}>
-          <Heading as='h2' size='md' mb={20}>
+          <Heading as='h2' size='md' mb={4}>
             {title}
           </Heading>
         </Link>
       ) : (
-        <Heading as='h2' size='md' mb={20}>
+        <Heading as='h2' size='md' mb={4}>
           {title}
         </Heading>
       )}
