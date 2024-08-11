@@ -26,7 +26,7 @@ const AnimatedPaper: React.FC<AnimatedPaperProps> = ({
   return (
     <Box
       className={className}
-      p={4}
+      p={8}
       m={4}
       bg={backgroundColor}
       color={textColor}

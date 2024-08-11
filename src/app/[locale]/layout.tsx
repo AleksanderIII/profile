@@ -40,7 +40,7 @@ export default function LocaleLayout({
         <body className={inter.className}>
           <Providers>
             <Header />
-            <main style={{ marginTop: '80px' }}>{children}</main>
+            <main style={{ marginTop: '100px' }}>{children}</main>
             <Footer />
           </Providers>
         </body>
