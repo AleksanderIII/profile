@@ -1,0 +1,28 @@
+.cardsGrid {
+  display: grid;
+  padding: 2rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 2rem;
+  column-gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.card {
+  overflow: hidden;
+  padding: 2rem;
+}
+
+@media (max-width: 1200px) {
+  .cardsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    padding: 1rem;
+  }
+}
