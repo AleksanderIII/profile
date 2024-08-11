@@ -75,8 +75,6 @@ const Courses = () => {
           display: 'block',
           position: 'relative',
           marginTop: '1rem',
-          left: '50%',
-          transform: 'translateX(-50%)',
         }}
         href={'/courses'}
       >
