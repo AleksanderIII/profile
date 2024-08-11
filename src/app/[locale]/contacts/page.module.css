@@ -1,4 +1,9 @@
 .contactsWrapper {
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 40% 60%;
 }
 .infoBlock {
   margin-bottom: 2rem;
@@ -10,4 +15,10 @@
 .infoText {
 }
 .infoBlock {
+}
+
+@media (max-width: 700px) {
+  .contactsWrapper {
+    grid-template-columns: 1fr;
+  }
 }

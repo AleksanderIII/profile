@@ -60,75 +60,77 @@ const ContactsPage = () => {
 
   return (
     <Container maxW='container.xl'>
-      <Box m={20} p={10} bg={containerBg} color={textColor}>
-        <Box className={styles.contactsWrapper}>
-          <Box>
-            <Box className={styles.infoBlock}>
-              <Heading as='h3' size='md' className={styles.infoLabel}>
-                {t('location')}
-              </Heading>
-              <Text className={styles.infoText}>{contactData.location}</Text>
-            </Box>
-
-            <Box className={styles.infoBlock}>
-              <Heading as='h3' size='md' className={styles.infoLabel}>
-                {t('phone')}
-              </Heading>
-              <Text className={styles.infoText}>{contactData.phone}</Text>
-            </Box>
-
-            <Box className={styles.infoBlock}>
-              <Heading as='h3' size='md' className={styles.infoLabel}>
-                {t('emails')}
-              </Heading>
-              {contactData.emails.map((email, index) => (
-                <Text key={index} className={styles.infoText}>
-                  {email}
-                </Text>
-              ))}
-            </Box>
-          </Box>
-
-          <Box className={styles.formBlock}>
-            <Heading as='h3' size='md' mb={4} className={styles.formTitle}>
-              {t('sendMessage')}
+      <Box
+        bg={containerBg}
+        color={textColor}
+        className={styles.contactsWrapper}
+      >
+        <Box className={styles.infoSection}>
+          <Box className={styles.infoBlock}>
+            <Heading as='h3' size='md' className={styles.infoLabel}>
+              {t('location')}
             </Heading>
-            <form onSubmit={handleSubmit} className={styles.form}>
-              <FormControl mb={4}>
-                <FormLabel htmlFor='email'>{t('email')}</FormLabel>
-                <Input
-                  id='email'
-                  type='email'
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className={styles.input}
-                />
-              </FormControl>
-              <FormControl mb={4}>
-                <FormLabel htmlFor='message'>{t('message')}</FormLabel>
-                <Textarea
-                  id='message'
-                  rows={4}
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  className={styles.textarea}
-                />
-              </FormControl>
-              <Button
-                type='submit'
-                colorScheme='teal'
-                isDisabled={submitted}
-                className={styles.submitButton}
-              >
-                {submitted ? t('submitted') : t('submit')}
-              </Button>
-              {submitted && (
-                <Text className={styles.thankYouMessage}>
-                  {t('thankYouMessage')}
-                </Text>
-              )}
-            </form>
+            <Text className={styles.infoText}>{contactData.location}</Text>
           </Box>
+
+          <Box className={styles.infoBlock}>
+            <Heading as='h3' size='md' className={styles.infoLabel}>
+              {t('phone')}
+            </Heading>
+            <Text className={styles.infoText}>{contactData.phone}</Text>
+          </Box>
+
+          <Box className={styles.infoBlock}>
+            <Heading as='h3' size='md' className={styles.infoLabel}>
+              {t('emails')}
+            </Heading>
+            {contactData.emails.map((email, index) => (
+              <Text key={index} className={styles.infoText}>
+                {email}
+              </Text>
+            ))}
+          </Box>
+        </Box>
+
+        <Box className={styles.formBlock}>
+          <Heading as='h3' size='md' mb={4} className={styles.formTitle}>
+            {t('sendMessage')}
+          </Heading>
+          <form onSubmit={handleSubmit} className={styles.form}>
+            <FormControl mb={4}>
+              <FormLabel htmlFor='email'>{t('email')}</FormLabel>
+              <Input
+                id='email'
+                type='email'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className={styles.input}
+              />
+            </FormControl>
+            <FormControl mb={4}>
+              <FormLabel htmlFor='message'>{t('message')}</FormLabel>
+              <Textarea
+                id='message'
+                rows={4}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                className={styles.textarea}
+              />
+            </FormControl>
+            <Button
+              type='submit'
+              colorScheme='teal'
+              isDisabled={submitted}
+              className={styles.submitButton}
+            >
+              {submitted ? t('submitted') : t('submit')}
+            </Button>
+            {submitted && (
+              <Text className={styles.thankYouMessage}>
+                {t('thankYouMessage')}
+              </Text>
+            )}
+          </form>
         </Box>
       </Box>
     </Container>
