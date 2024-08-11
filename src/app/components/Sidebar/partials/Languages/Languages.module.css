@@ -2,14 +2,9 @@
   display: grid;
   grid-template-columns: auto 110px 40px;
   align-items: center;
-  padding: 3px 0;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .languageName {
   font-weight: bold;
-}
-
-.languageLevel {
-  color: var(--chakra-colors-gray-600);
 }

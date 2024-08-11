@@ -1,4 +1,13 @@
-import { Box, Container, Heading, Stack, Text } from '@chakra-ui/react';
+'use client';
+
+import {
+  Box,
+  Container,
+  Heading,
+  Stack,
+  Text,
+  useColorModeValue,
+} from '@chakra-ui/react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
@@ -8,9 +17,12 @@ const EducationPage = () => {
   const translation = useTranslations('Education');
   const keys = ['university', 'magistracy', 'school'] as const;
 
+  const containerBg = useColorModeValue('light.background', 'dark.background');
+  const textColor = useColorModeValue('light.text', 'dark.text');
+
   return (
     <Container maxW='container.xl' className={styles.container}>
-      <Box>
+      <Box bg={containerBg} color={textColor}>
         <Stack spacing={4}>
           {keys.map((educationKey) => (
             <Box key={educationKey} className={styles.item}>

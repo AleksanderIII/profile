@@ -7,6 +7,7 @@ import {
   FaCertificate,
 } from 'react-icons/fa';
 import styles from './NavItem.module.css';
+import Link from 'next/link';
 
 interface NavItemProps {
   item: {
@@ -15,7 +16,6 @@ interface NavItemProps {
     link: string;
   };
   isActive: boolean;
-  onClick: () => void;
   mobileView?: boolean;
 }
 
@@ -27,22 +27,18 @@ const iconMap: { [key: string]: JSX.Element } = {
   certificate: <FaCertificate />,
 };
 
-const NavItem = ({
-  item,
-  isActive,
-  onClick,
-  mobileView = false,
-}: NavItemProps) => {
+const NavItem = ({ item, isActive, mobileView = false }: NavItemProps) => {
   return (
     <Box
       className={`${styles.navItem} ${isActive ? styles.active : ''}`}
-      onClick={onClick}
       width='100%'
     >
-      <Flex align='center' className={styles.navLink}>
-        {iconMap[item.icon]}
-        <Text ml={1}>{item.name}</Text>
-      </Flex>
+      <Link href={item.link}>
+        <Flex align='center' className={styles.navLink}>
+          {iconMap[item.icon]}
+          <Text ml={1}>{item.name}</Text>
+        </Flex>
+      </Link>
     </Box>
   );
 };

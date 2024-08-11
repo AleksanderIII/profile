@@ -4,7 +4,7 @@
 
 .item {
   margin-bottom: 2rem;
-  padding-bottom: 2rem;
+  padding: 2rem;
 }
 
 .item:last-child {

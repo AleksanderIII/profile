@@ -10,7 +10,7 @@ const Intro = () => {
   const ICON_SIZE = 30;
 
   return (
-    <Box className={styles.introContainer}>
+    <Box pt={2} className={styles.introContainer}>
       <Image
         src='/avatar.png'
         alt='Avatar'

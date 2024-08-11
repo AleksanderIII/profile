@@ -1,5 +1,12 @@
 import { Element } from 'react-scroll';
-import { Box, Text, Card, CardBody, Heading } from '@chakra-ui/react';
+import {
+  Box,
+  Text,
+  Card,
+  CardBody,
+  Heading,
+  useColorModeValue,
+} from '@chakra-ui/react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { format } from 'date-fns';
@@ -9,6 +16,10 @@ import styles from './Courses.module.css';
 
 const Courses = () => {
   const t = useTranslations('Courses');
+  const cardBg = useColorModeValue(
+    'light.cardBackground',
+    'dark.cardBackground'
+  );
 
   return (
     <Element name='coursesAndCertificates'>
@@ -20,7 +31,7 @@ const Courses = () => {
       >
         <div className={styles.cardsGrid}>
           {certificates.map((certificate) => (
-            <Box key={certificate.id} className={styles.card}>
+            <Box bg={cardBg} key={certificate.id} className={styles.card}>
               <Image
                 alt={certificate.title}
                 src={certificate.image}
@@ -29,9 +40,17 @@ const Courses = () => {
                 height={200}
                 className={styles.cardImage}
               />
-              <Card>
-                <CardBody className={styles.cardContent}>
-                  <Heading as='h3' size='md'>
+              <Card
+                borderRadius='none'
+                style={{
+                  height: 'calc(100% - 200px)',
+                  border: 'none',
+                  boxShadow: 'none',
+                  width: '100%',
+                }}
+              >
+                <CardBody bg={cardBg} className={styles.cardContent}>
+                  <Heading as='h3' mb={1} size='md'>
                     {t(certificate.title)}
                   </Heading>
                   <Text className={styles.cardSubtitle}>

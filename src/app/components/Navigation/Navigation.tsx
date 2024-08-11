@@ -1,27 +1,19 @@
 import { Box } from '@chakra-ui/react';
 import NavItem from './NavItem/NavItem';
-import NavigationLink from './NavigationLink/NavigationLink';
 import styles from './Navigation.module.css';
 
 interface NavigationItem {
   name: string;
-  icon: string; // Using a string to denote icon names
+  icon: string;
   link: string;
 }
 
 interface NavigationProps {
   items: NavigationItem[];
-  activeSection: string;
-  onClick: (link: string) => void;
   mobileView?: boolean;
 }
 
-const Navigation = ({
-  items,
-  activeSection,
-  onClick,
-  mobileView = false,
-}: NavigationProps) => {
+const Navigation = ({ items, mobileView = false }: NavigationProps) => {
   return (
     <Box
       className={`${styles.navContainer} ${
@@ -32,8 +24,7 @@ const Navigation = ({
         <NavItem
           key={item.link}
           item={item}
-          isActive={activeSection === item.link}
-          onClick={() => onClick(item.link)}
+          isActive={false}
           mobileView={mobileView}
         />
       ))}

@@ -20,11 +20,11 @@
 }
 
 .navItem.active {
-  background-color: rgb(185, 128, 22); /* Adjust to your theme color */
+  background-color: rgb(185, 128, 22);
 }
 
 .navItem:hover {
-  background-color: rgba(185, 128, 22, 0.1); /* Light hover effect */
+  background-color: rgba(185, 128, 22, 0.1);
 }
 
 .divider {

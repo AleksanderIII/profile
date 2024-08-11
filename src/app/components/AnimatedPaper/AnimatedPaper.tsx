@@ -26,11 +26,8 @@ const AnimatedPaper: React.FC<AnimatedPaperProps> = ({
   return (
     <Box
       className={className}
-      style={{ transitionDelay: `${delay}s` }}
       p={4}
       m={4}
-      borderRadius='md'
-      boxShadow='md'
       bg={backgroundColor}
       color={textColor}
     >

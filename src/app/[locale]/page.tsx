@@ -4,7 +4,6 @@ import {
   Box,
   Container,
   useDisclosure,
-  IconButton,
   useColorModeValue,
 } from '@chakra-ui/react';
 import { FaGlobe, FaGraduationCap } from 'react-icons/fa';
@@ -52,7 +51,7 @@ const Profile = () => {
           <Sidebar onClose={onClose} />
         </Box>
 
-        <Box flex='1' p={4} className={styles.mainContent}>
+        <Box flex='1' className={styles.mainContent}>
           <Main />
         </Box>
       </Box>

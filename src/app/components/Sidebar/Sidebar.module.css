@@ -3,7 +3,6 @@
 }
 
 .sidebarContent {
-  border-radius: 4px;
   box-shadow: var(--chakra-shadows-md);
   position: relative;
 }

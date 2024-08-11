@@ -20,3 +20,11 @@ a {
   color: rgb(123, 123, 123);
   font-size: 35px;
 }
+
+body.chakra-ui-dark {
+  background-color: #000;
+}
+
+body.chakra-ui-light {
+  background-color: #fff;
+}
