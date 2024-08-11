@@ -15,7 +15,7 @@ const FooterContact: React.FC = () => {
       >
         {t('emailTitle')}:
       </Text>
-      <Box mb={8}>
+      <Box mb={4}>
         <Text className={styles.textMedium}>
           <a href={`mailto:${t('mail')}`} className={styles.contactDetail}>
             {t('mail')}
@@ -31,7 +31,7 @@ const FooterContact: React.FC = () => {
       <Text className={`${styles.textMedium} ${styles.textBold}`}>
         {t('phoneTitle')}:
       </Text>
-      <Box mb={8}>
+      <Box mb={4}>
         <Text className={styles.textMedium}>{t('phone')}</Text>
       </Box>
 

@@ -16,13 +16,7 @@
   font-size: 0.875rem;
 }
 
-/* Адаптивные стили */
 @media (max-width: 48em) {
-  /* max-width: 768px */
-  .paper {
-    padding: 0.5rem;
-    margin-top: 0.5rem;
-  }
   .heading {
     font-size: 1rem;
   }

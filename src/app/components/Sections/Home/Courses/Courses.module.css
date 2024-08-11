@@ -31,6 +31,14 @@
   grid-template-columns: 1fr;
 }
 
+.link {
+  background-color: orange;
+}
+
+.link:hover {
+  text-decoration: none;
+}
+
 @media (min-width: 900px) {
   .cardsGrid {
     grid-template-columns: repeat(2, 1fr);

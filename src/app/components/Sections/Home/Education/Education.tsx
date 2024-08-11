@@ -24,10 +24,8 @@ const Education: React.FC = () => {
                 src={`/education/${translation(`${educationKey}.logo`)}`}
                 alt={`${translation(`${educationKey}.name`)} logo`}
                 className={styles.logo}
-                width={50} /* Ширина по умолчанию, будет переопределена в CSS */
-                height={
-                  50
-                } /* Высота по умолчанию, будет переопределена в CSS */
+                width={50}
+                height={50}
               />
               <Box>
                 <Text className={styles.name}>
