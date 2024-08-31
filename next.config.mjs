@@ -1,6 +1,8 @@
 import createNextIntlPlugin from 'next-intl/plugin';
+import { config } from 'dotenv';
 
-require('dotenv').config();
+config();
+
 const withNextIntl = createNextIntlPlugin();
 
 export default withNextIntl({
