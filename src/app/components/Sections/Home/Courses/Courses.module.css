@@ -31,10 +31,10 @@
   grid-template-columns: 1fr;
 }
 
-.link {
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: orange;
+.moreLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .link:hover {

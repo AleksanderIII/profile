@@ -1,16 +1,4 @@
-import React from 'react';
-import {
-  Box,
-  Text,
-  Stack,
-  Flex,
-  Divider,
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
-} from '@chakra-ui/react';
+import Accordion from '@/app/components/ui/Accordion/Accordion';
 import { hardSkills, softSkills } from '../../constants';
 
 const Star = ({ filled }: { filled: boolean }) => (
@@ -37,61 +25,40 @@ interface SubCategory {
 }
 
 const SkillItem = ({ skill }: { skill: Skill }) => (
-  <Flex align='center' justify='space-between'>
-    <Text fontWeight='medium'>{skill.name}</Text>
-    <Box display='flex'>
+  <div>
+    <span>{skill.name}</span>
+    <div>
       {[...Array(5)].map((_, index) => (
         <Star key={index} filled={skill.rating > index} />
       ))}
-    </Box>
-  </Flex>
+    </div>
+  </div>
 );
 
 const SkillCategory = ({ category }: { category: SubCategory }) => (
-  <AccordionItem>
-    <AccordionButton>
-      <Box flex='1' textAlign='left'>
-        <Text fontWeight='bold' fontSize='md'>
-          {category.name.toUpperCase()}
-        </Text>
-      </Box>
-      <AccordionIcon />
-    </AccordionButton>
-    <AccordionPanel pb={4}>
-      <Stack spacing={4}>
+  <div>
+    <div>
+      <div>
+        <span>{category.name.toUpperCase()}</span>
+      </div>
+      <div />
+    </div>
+    <div>
+      <div>
         {category.data.map((skill) => (
           <SkillItem key={skill.name} skill={skill} />
         ))}
-      </Stack>
-    </AccordionPanel>
-  </AccordionItem>
+      </div>
+    </div>
+  </div>
 );
 
 const SkillsPage = () => {
   return (
-    <Box p={4}>
-      <Box mb={6}>
-        <Text fontWeight='bold' fontSize='lg' mb={4}>
-          Hard Skills
-        </Text>
-        <Accordion allowToggle>
-          {hardSkills.map((category) => (
-            <SkillCategory key={category.id} category={category} />
-          ))}
-        </Accordion>
-      </Box>
-      <Divider my={6} />
-      <Box mb={6}>
-        <Text fontWeight='bold' fontSize='lg' mb={4}>
-          Soft Skills
-        </Text>
-        <Accordion allowToggle>
-          {softSkills.map((category) => (
-            <SkillCategory key={category.id} category={category} />
-          ))}
-        </Accordion>
-      </Box>
-    </Box>
+    <div>
+      <Accordion header='Hard Skills' data={hardSkills} />
+      <Accordion header='Soft Skills' data={softSkills} />
+    </div>
   );
 };
 

@@ -1,6 +1,6 @@
 import Introduction from './Introduction/Introduction';
 import Education from './Education/Education';
-import WorkExperience from './WorkExperience/WorkExperience';
+import Career from './Career/Career';
 import Courses from './Courses/Courses';
 import Contacts from './Contacts/Contacts';
 
@@ -9,7 +9,7 @@ const Main = () => {
     <>
       <Introduction />
       <Education />
-      <WorkExperience />
+      <Career />
       <Courses />
       <Contacts />
     </>

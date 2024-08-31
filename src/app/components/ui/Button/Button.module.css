@@ -1,0 +1,11 @@
+.button {
+  padding: 1rem;
+  background-color: orange;
+  color: white;
+  border: none;
+  transition: background-color 1s ease;
+}
+
+.button:hover {
+  background-color: rgb(251, 183, 56);
+}

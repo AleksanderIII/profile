@@ -1,7 +1,6 @@
 import React from 'react';
-import { Box, Heading, List, ListItem, Text } from '@chakra-ui/react';
 import { useTranslations } from 'next-intl';
-import CircleProgress from '../../../CircleProgress/CircleProgress';
+import CircleProgress from '../../../ui/CircleProgress/CircleProgress';
 
 import styles from './Languages.module.css';
 import { Levels, levelToProgress } from './constants';
@@ -17,22 +16,22 @@ const Languages = () => {
   ];
 
   return (
-    <Box className={styles.languagesContainer}>
-      <List spacing={4}>
+    <div className={styles.languagesContainer}>
+      <div>
         {languages.map((language) => (
-          <ListItem key={language.name} className={styles.languageItem}>
-            <Text className={styles.languageName}>{language.name}</Text>
-            <Text className={styles.languageLevel}>{`${t('level')}: ${
+          <div key={language.name} className={styles.languageItem}>
+            <span className={styles.languageName}>{language.name}</span>
+            <span className={styles.languageLevel}>{`${t('level')}: ${
               language.level
-            }`}</Text>
+            }`}</span>
             <CircleProgress
               progress={levelToProgress(language.level)}
               backgroundUrl={language.flag}
             />
-          </ListItem>
+          </div>
         ))}
-      </List>
-    </Box>
+      </div>
+    </div>
   );
 };
 

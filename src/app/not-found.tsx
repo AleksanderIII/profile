@@ -1,17 +1,15 @@
-import { Box, Container, Heading, Text, Button } from '@chakra-ui/react';
 import Link from 'next/link';
+import Button from './components/ui/Button/Button';
 
 export default function GlobalNotFound() {
   return (
-    <Container maxW='container.lg' p={4}>
-      <Box textAlign='center'>
-        <Heading as='h1' size='2xl'>
-          Page Not Found
-        </Heading>
+    <div>
+      <div>
+        <h1>Page Not Found</h1>
         <Link href='/' passHref>
-          <Button mt={4}>Back to Home</Button>
+          <Button>Back to Home</Button>
         </Link>
-      </Box>
-    </Container>
+      </div>
+    </div>
   );
 }

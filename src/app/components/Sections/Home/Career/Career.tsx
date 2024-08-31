@@ -1,13 +1,11 @@
-import React from 'react';
-import { Box, Text, Stack, useColorModeValue } from '@chakra-ui/react';
 import { useTranslations } from 'next-intl';
 import { format } from 'date-fns';
 import Image from 'next/image';
 
 import { workExperience } from './constants';
 
-import styles from './WorkExperience.module.css';
-import AnimatedPaper from '@/app/components/AnimatedPaper/AnimatedPaper';
+import styles from './Career.module.css';
+import AnimatedPaper from '@/app/components/ui/AnimatedPaper/AnimatedPaper';
 
 interface IPosition {
   company: string;
@@ -22,25 +20,20 @@ interface IPosition {
 
 const WorkExperience: React.FC = () => {
   const t = useTranslations('WorkExperience');
-  const dividerColor = useColorModeValue('light.divider', 'dark.divider');
 
   const renderContractor = (
     contractor: IPosition,
     isLastContactor: boolean
   ) => (
-    <Text key={contractor.company} as='span' fontSize='sm'>
+    <span key={contractor.company}>
       {t(contractor.company)}
       {isLastContactor ? '' : ','}{' '}
-    </Text>
+    </span>
   );
 
   const renderPosition = (position: IPosition) => (
-    <Box
-      key={position.company}
-      className={`${styles.position}`}
-      style={{ borderBottomColor: dividerColor }}
-    >
-      <Box display='flex' alignItems='start' className={styles.positionContent}>
+    <div key={position.company} className={`${styles.position}`}>
+      <div className={styles.positionContent}>
         <Image
           src={position.logo}
           alt={`${t(position.company)} logo`}
@@ -48,26 +41,20 @@ const WorkExperience: React.FC = () => {
           height={position.size.height * 0.6}
           className={styles.positionLogo}
         />
-        <Box className={styles.positionText}>
-          <Text fontSize='md' fontWeight='bold'>
-            {`${t(position.position)} at ${t(position.company)}`}
-          </Text>
-          <Text fontSize='sm' color='gray.500'>
+        <div className={styles.positionText}>
+          <p>{`${t(position.position)} at ${t(position.company)}`}</p>
+          <p>
             {`${format(position.start, 'MMMM yyyy')} - ${format(
               position.end,
               'MMMM yyyy'
             )}`}
-          </Text>
-          <Text fontSize='sm' color='gray.500'>
-            {t(position.location)}
-          </Text>
-        </Box>
-      </Box>
+          </p>
+          <p>{t(position.location)}</p>
+        </div>
+      </div>
       {position.contractor && position.contractor.length > 0 && (
-        <Box className={styles.contractorPositions}>
-          <Text fontSize='sm' fontWeight='bold'>
-            {t('contractorPositions').toLocaleUpperCase()}
-          </Text>
+        <div className={styles.contractorPositions}>
+          <span>{t('contractorPositions').toLocaleUpperCase()}</span>
           {position.contractor.map((item, index) =>
             renderContractor(
               item,
@@ -76,38 +63,35 @@ const WorkExperience: React.FC = () => {
                 : true
             )
           )}
-        </Box>
+        </div>
       )}
-    </Box>
+    </div>
   );
 
   return (
     <AnimatedPaper
       title={t('title').toLocaleUpperCase()}
       delay={0.1}
-      className={styles.paper}
       link='/work'
     >
-      <Stack>
+      <div>
         {Object.entries(workExperience).map(([key, work]) => (
-          <Box key={key} className={styles.listItem}>
+          <div key={key} className={`${styles.listItem} divider`}>
             {renderPosition(work)}
             {work.contactor && work.contactor.length > 0 && (
-              <Box className={styles.contractorPositions}>
-                <Text fontSize='sm' fontWeight='bold'>
-                  {t('contractorPositions').toLocaleUpperCase()}
-                </Text>
+              <div className={styles.contractorPositions}>
+                <span>{t('contractorPositions').toLocaleUpperCase()}: </span>
                 {work.contactor.map((contactorWork, index) =>
                   renderContractor(
                     contactorWork,
                     index === work.contactor.length - 1
                   )
                 )}
-              </Box>
+              </div>
             )}
-          </Box>
+          </div>
         ))}
-      </Stack>
+      </div>
     </AnimatedPaper>
   );
 };

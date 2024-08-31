@@ -1,0 +1,45 @@
+.header {
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-bottom: 3px;
+  font-size: 1rem;
+  background-color: rgb(237, 237, 237);
+  color: rgb(68, 45, 1);
+}
+
+.skill {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 1rem);
+  padding: 0.5rem;
+  margin-bottom: 0.25rem;
+  margin-left: 1rem;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+
+.skill--perfect {
+  background-color: rgb(250, 223, 170);
+}
+.skill--good {
+  background-color: rgba(250, 223, 170, 0.8);
+}
+.skill--normal {
+  background-color: rgba(250, 223, 170, 0.6);
+}
+.skill--low {
+  background-color: rgba(250, 223, 170, 0.4);
+}
+.skill--nothing {
+  background-color: rgba(250, 223, 170, 0.2);
+}

@@ -1,31 +1,24 @@
-'use client';
-
-import {
-  Box,
-  Container,
-  Heading,
-  Stack,
-  Text,
-  useColorModeValue,
-} from '@chakra-ui/react';
 import Image from 'next/image';
+import { unstable_setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 
 import styles from './page.module.css';
 
-const EducationPage = () => {
+const EducationPage = ({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) => {
+  unstable_setRequestLocale(locale);
   const translation = useTranslations('Education');
   const keys = ['university', 'magistracy', 'school'] as const;
 
-  const containerBg = useColorModeValue('light.background', 'dark.background');
-  const textColor = useColorModeValue('light.text', 'dark.text');
-
   return (
-    <Container maxW='container.xl' className={styles.container}>
-      <Box bg={containerBg} color={textColor}>
-        <Stack spacing={4}>
+    <div className={styles.container}>
+      <div>
+        <div>
           {keys.map((educationKey) => (
-            <Box key={educationKey} className={styles.item}>
+            <div key={educationKey} className={styles.item}>
               <Image
                 src={`/education/${translation(`${educationKey}.logo`)}`}
                 alt={`${translation(`${educationKey}.name`)} logo`}
@@ -33,21 +26,19 @@ const EducationPage = () => {
                 width={50}
                 height={50}
               />
-              <Box>
-                <Heading as='h3' size='md'>
-                  {translation(`${educationKey}.name`)}
-                </Heading>
-                <Text>
+              <div>
+                <h3>{translation(`${educationKey}.name`)}</h3>
+                <span>
                   {`${translation(`${educationKey}.degree`)} (${translation(
                     `${educationKey}.year`
                   )})`}
-                </Text>
-              </Box>
-            </Box>
+                </span>
+              </div>
+            </div>
           ))}
-        </Stack>
-      </Box>
-    </Container>
+        </div>
+      </div>
+    </div>
   );
 };
 export default EducationPage;

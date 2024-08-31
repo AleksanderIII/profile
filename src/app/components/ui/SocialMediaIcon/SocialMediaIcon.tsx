@@ -1,5 +1,3 @@
-import { Box } from '@chakra-ui/react';
-
 import styles from './SocialMediaIcon.module.css';
 
 interface ISocialMediaProps {
@@ -11,9 +9,9 @@ interface ISocialMediaProps {
 
 const SocialMediaIcon = ({ name, link, icon }: ISocialMediaProps) => {
   return (
-    <Box key={name} as='a' href={link} className={styles.socialLink}>
+    <a key={name} href={link} className={styles.socialLink}>
       {icon}
-    </Box>
+    </a>
   );
 };
 export default SocialMediaIcon;

@@ -1,25 +1,19 @@
-'use client';
-
-import { Box, Text, useColorModeValue } from '@chakra-ui/react';
 import { useTranslations } from 'next-intl';
+
+import styles from '../Footer.module.css';
 
 const FooterCopyright: React.FC = () => {
   const t = useTranslations('Footer');
   const commonTranslate = useTranslations('common');
-  const backgroundColor = useColorModeValue(
-    'light.background',
-    'dark.background'
-  );
-  const textColor = useColorModeValue('light.text', 'dark.text');
 
   return (
-    <Box textAlign='center' bg={backgroundColor} color={textColor}>
-      <Text fontSize='sm'>
+    <div className={styles.copyright}>
+      <span>
         &copy; {new Date().getFullYear()} {commonTranslate('name')}
         {'. '}
         {t('allRightsReserved')}
-      </Text>
-    </Box>
+      </span>
+    </div>
   );
 };
 

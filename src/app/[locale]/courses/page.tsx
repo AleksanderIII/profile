@@ -1,36 +1,26 @@
-'use client';
-
 import { certificates } from '@/app/components/Sections/Home/Courses/constants';
-import {
-  Box,
-  Card,
-  CardBody,
-  Container,
-  Heading,
-  Text,
-  useColorModeValue,
-} from '@chakra-ui/react';
+
 import { format } from 'date-fns';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 import styles from './page.module.css';
+import { unstable_setRequestLocale } from 'next-intl/server';
 
-const CoursesPage = () => {
+const CoursesPage = ({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) => {
+  unstable_setRequestLocale(locale);
   const t = useTranslations('Courses');
-  const containerBg = useColorModeValue('light.background', 'dark.background');
-  const textColor = useColorModeValue('light.text', 'dark.text');
-  const cardBg = useColorModeValue(
-    'light.cardBackground',
-    'dark.cardBackground'
-  );
 
   return (
-    <Container maxW='container.xl'>
-      <Box bg={containerBg} color={textColor}>
+    <div>
+      <div>
         <div className={styles.cardsGrid}>
           {certificates.map((certificate) => (
-            <Box bg={cardBg} key={certificate.id} className={styles.card}>
+            <div key={certificate.id} className={styles.card}>
               <Image
                 alt={certificate.title}
                 src={certificate.image}
@@ -39,8 +29,7 @@ const CoursesPage = () => {
                 height={200}
                 className={styles.cardImage}
               />
-              <Card
-                borderRadius='none'
+              <div
                 style={{
                   height: 'calc(100% - 200px)',
                   border: 'none',
@@ -48,28 +37,26 @@ const CoursesPage = () => {
                   width: '100%',
                 }}
               >
-                <CardBody bg={cardBg} className={styles.cardContent}>
-                  <Heading as='h3' mb={1} size='md'>
-                    {t(certificate.title)}
-                  </Heading>
-                  <Text className={styles.cardSubtitle}>
+                <div className={styles.cardContent}>
+                  <h3>{t(certificate.title)}</h3>
+                  <span className={styles.cardSubtitle}>
                     {t('date')}
                     {': '}
                     {format(new Date(certificate.date), 'MMMM d, yyyy')}
-                  </Text>
-                  <Text className={styles.cardSubtitle}>
+                  </span>
+                  <span className={styles.cardSubtitle}>
                     {t('instructor')}: {certificate.instructor}
-                  </Text>
-                  <Text className={styles.cardSubtitle}>
+                  </span>
+                  <span className={styles.cardSubtitle}>
                     {t('platform')}: {certificate.platform.name}
-                  </Text>
-                </CardBody>
-              </Card>
-            </Box>
+                  </span>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
-      </Box>
-    </Container>
+      </div>
+    </div>
   );
 };
 export default CoursesPage;

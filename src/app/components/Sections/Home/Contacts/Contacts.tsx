@@ -1,8 +1,5 @@
-import { Box, Flex, Text } from '@chakra-ui/react';
 import { useTranslations } from 'next-intl';
-import AnimatedPaper from '@/app/components/AnimatedPaper/AnimatedPaper';
-import { PhoneIcon, EmailIcon } from '@chakra-ui/icons';
-import { HiLocationMarker } from 'react-icons/hi';
+import AnimatedPaper from '@/app/components/ui/AnimatedPaper/AnimatedPaper';
 
 import styles from './Contacts.module.css';
 
@@ -16,40 +13,27 @@ const Contacts = () => {
   const t = useTranslations('Contact');
 
   return (
-    <AnimatedPaper
-      delay={0.1}
-      title={t('title').toLocaleUpperCase()}
-      className={styles.contactPaper}
-    >
-      <Box className={styles.contactsWrapper}>
-        <Box className={styles.infoBlock}>
-          <Flex align='center' mb={2}>
-            <HiLocationMarker className={styles.icon} />
-            <Text className={styles.infoLabel}>{t('location')}</Text>
-          </Flex>
-          <Text className={styles.infoText}>{contactData.location}</Text>
-        </Box>
+    <AnimatedPaper delay={0.1} title={t('title').toLocaleUpperCase()}>
+      <div className={styles.contactsWrapper}>
+        <div className={styles.infoBlock}>
+          <p className={styles.infoLabel}>{t('location')}</p>
+          <span className={styles.infoText}>{contactData.location}</span>
+        </div>
 
-        <Box className={styles.infoBlock}>
-          <Flex align='center' mb={2}>
-            <PhoneIcon className={styles.icon} />
-            <Text className={styles.infoLabel}>{t('phone')}</Text>
-          </Flex>
-          <Text className={styles.infoText}>{contactData.phone}</Text>
-        </Box>
+        <div className={styles.infoBlock}>
+          <p className={styles.infoLabel}>{t('phone')}</p>
+          <span className={styles.infoText}>{contactData.phone}</span>
+        </div>
 
-        <Box className={styles.infoBlock}>
-          <Flex align='center' mb={2}>
-            <EmailIcon className={styles.icon} />
-            <Text className={styles.infoLabel}>{t('emails')}</Text>
-          </Flex>
+        <div className={styles.infoBlock}>
+          <p className={styles.infoLabel}>{t('emails')}</p>
           {contactData.emails.map((email, index) => (
-            <Text key={index} className={styles.infoText}>
+            <span key={index} className={styles.infoText}>
               {email}
-            </Text>
+            </span>
           ))}
-        </Box>
-      </Box>
+        </div>
+      </div>
     </AnimatedPaper>
   );
 };

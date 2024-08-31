@@ -1,6 +1,5 @@
 'use client';
 
-import { Box } from '@chakra-ui/react';
 import NavItem from './NavItem/NavItem';
 import styles from './Navigation.module.css';
 import { usePathname } from '@/i18n.config';
@@ -20,7 +19,7 @@ const Navigation = ({ items, mobileView = false }: NavigationProps) => {
   const pathname = usePathname();
 
   return (
-    <Box
+    <div
       className={`${styles.navContainer} ${
         mobileView ? styles.mobileView : ''
       }`}
@@ -33,7 +32,7 @@ const Navigation = ({ items, mobileView = false }: NavigationProps) => {
           mobileView={mobileView}
         />
       ))}
-    </Box>
+    </div>
   );
 };
 

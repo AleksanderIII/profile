@@ -36,3 +36,12 @@ body.chakra-ui-light {
 .chakra-ui-light .avatar {
   background-color: rgb(250, 221, 176);
 }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.divider {
+  border: 1px solid rgb(187, 187, 187);
+}

@@ -1,18 +1,10 @@
-'use client';
-
-import {
-  Box,
-  Container,
-  Stack,
-  Text,
-  useColorModeValue,
-} from '@chakra-ui/react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 import styles from './page.module.css';
 import { format } from 'date-fns';
-import { workExperience } from '@/app/components/Sections/Home/WorkExperience/constants';
+import { unstable_setRequestLocale } from 'next-intl/server';
+import { workExperience } from '@/app/components/Sections/Home/Career/constants';
 
 interface IPosition {
   company: string;
@@ -25,14 +17,12 @@ interface IPosition {
   contractor?: IPosition[];
 }
 
-const WorkPage = () => {
-  const containerBg = useColorModeValue('light.background', 'dark.background');
-  const textColor = useColorModeValue('light.text', 'dark.text');
+const WorkPage = ({ params: { locale } }: { params: { locale: string } }) => {
+  unstable_setRequestLocale(locale);
   const t = useTranslations('WorkExperience');
-  const dividerColor = useColorModeValue('light.divider', 'dark.divider');
 
   const renderContractor = (contractor: IPosition) => (
-    <Box py={5} key={contractor.company} className={styles.contractor}>
+    <div key={contractor.company} className={styles.contractor}>
       <Image
         src={contractor.logo}
         alt={`${t(contractor.company)} logo`}
@@ -40,31 +30,22 @@ const WorkPage = () => {
         height={contractor.size.height * 0.5}
         className={styles.contractorLogo}
       />
-      <Box className={styles.contractorText}>
-        <Text fontSize='sm'>
-          {`${t(contractor.position)} at ${t(contractor.company)}`}
-        </Text>
-        <Text fontSize='xs' color='gray.500'>
+      <div className={styles.contractorText}>
+        <span>{`${t(contractor.position)} at ${t(contractor.company)}`}</span>
+        <span>
           {`${format(contractor.start, 'MMMM yyyy')} - ${format(
             contractor.end,
             'MMMM yyyy'
           )}`}
-        </Text>
-        <Text fontSize='xs' color='gray.500'>
-          {t(contractor.location)}
-        </Text>
-      </Box>
-    </Box>
+        </span>
+        <span>{t(contractor.location)}</span>
+      </div>
+    </div>
   );
 
   const renderPosition = (position: IPosition) => (
-    <Box
-      py={10}
-      key={position.company}
-      className={`${styles.position}`}
-      style={{ borderBottomColor: dividerColor }}
-    >
-      <Box display='flex' alignItems='start' className={styles.positionContent}>
+    <div key={position.company} className={`${styles.position}`}>
+      <div className={styles.positionContent}>
         <Image
           src={position.logo}
           alt={`${t(position.company)} logo`}
@@ -72,53 +53,45 @@ const WorkPage = () => {
           height={position.size.height * 0.6}
           className={styles.positionLogo}
         />
-        <Box className={styles.positionText}>
-          <Text fontSize='md' fontWeight='bold'>
-            {`${t(position.position)} at ${t(position.company)}`}
-          </Text>
-          <Text fontSize='sm' color='gray.500'>
+        <div className={styles.positionText}>
+          <span>{`${t(position.position)} at ${t(position.company)}`}</span>
+          <span>
             {`${format(position.start, 'MMMM yyyy')} - ${format(
               position.end,
               'MMMM yyyy'
             )}`}
-          </Text>
-          <Text fontSize='sm' color='gray.500'>
-            {t(position.location)}
-          </Text>
-        </Box>
-      </Box>
+          </span>
+          <span>{t(position.location)}</span>
+        </div>
+      </div>
       {position.contractor && position.contractor.length > 0 && (
-        <Box className={styles.contractorPositions}>
-          <Text fontSize='sm' fontWeight='bold'>
-            {t('contractorPositions').toLocaleUpperCase()}
-          </Text>
+        <div className={styles.contractorPositions}>
+          <span>{t('contractorPositions').toLocaleUpperCase()}</span>
           {position.contractor.map(renderContractor)}
-        </Box>
+        </div>
       )}
-    </Box>
+    </div>
   );
   return (
-    <Container maxW='container.xl' mb={10}>
-      <Box p={10} bg={containerBg} color={textColor}>
-        <Stack spacing={4}>
+    <div>
+      <div>
+        <div>
           {Object.entries(workExperience).map(([key, work]) => (
-            <Box key={key} className={styles.listItem}>
+            <div key={key} className={styles.listItem}>
               {renderPosition(work)}
               {work.contactor && work.contactor.length > 0 && (
-                <Box className={styles.contractorPositions}>
-                  <Text fontSize='sm' fontWeight='bold'>
-                    {t('contractorPositions').toLocaleUpperCase()}
-                  </Text>
+                <div className={styles.contractorPositions}>
+                  <span>{t('contractorPositions').toLocaleUpperCase()}</span>
                   {work.contactor.map((contactorWork) =>
                     renderContractor(contactorWork)
                   )}
-                </Box>
+                </div>
               )}
-            </Box>
+            </div>
           ))}
-        </Stack>
-      </Box>
-    </Container>
+        </div>
+      </div>
+    </div>
   );
 };
 export default WorkPage;

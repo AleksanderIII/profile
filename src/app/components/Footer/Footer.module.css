@@ -1,12 +1,26 @@
 .footer {
   padding-top: 1rem;
   padding-bottom: 1rem;
+  box-shadow: 6px 6px 8px rgba(11, 8, 8, 0.819);
 }
 
 .grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+}
+
+.section {
+  padding: 1rem;
+}
+
+.title {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.copyright {
+  text-align: center;
 }
 
 @media (min-width: 48em) {
@@ -27,7 +41,8 @@
 
 .icons {
   display: flex;
-  gap: 0.5rem;
+  flex-direction: row;
+  gap: 1.5rem;
 }
 
 .textCenter {

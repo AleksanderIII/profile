@@ -1,13 +1,19 @@
 .sectionContainer {
   position: relative;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
   padding-bottom: 2rem;
   padding-right: 2rem;
   padding-left: 2rem;
   margin-bottom: 2rem;
+  border-top: none;
+  border-left: none;
+  border-right: none;
 }
 
 .sectionContainer:last-child {
   border: none;
+}
+
+.title {
+  display: block;
+  margin-bottom: 1rem;
 }

@@ -1,8 +1,7 @@
 import React from 'react';
-import { Box, Heading, Text, Stack } from '@chakra-ui/react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import AnimatedPaper from '../../../AnimatedPaper/AnimatedPaper';
+import AnimatedPaper from '../../../ui/AnimatedPaper/AnimatedPaper';
 import styles from './Education.module.css';
 
 const Education: React.FC = () => {
@@ -14,33 +13,30 @@ const Education: React.FC = () => {
       title={translation('title').toLocaleUpperCase()}
       link='/education'
       delay={0.1}
-      className={styles.paper}
     >
-      <Box>
-        <Stack spacing={4}>
-          {keys.map((educationKey) => (
-            <Box key={educationKey} className={styles.item}>
-              <Image
-                src={`/education/${translation(`${educationKey}.logo`)}`}
-                alt={`${translation(`${educationKey}.name`)} logo`}
-                className={styles.logo}
-                width={50}
-                height={50}
-              />
-              <Box>
-                <Text className={styles.name}>
-                  {translation(`${educationKey}.name`)}
-                </Text>
-                <Text className={styles.details}>
-                  {`${translation(`${educationKey}.degree`)} (${translation(
-                    `${educationKey}.year`
-                  )})`}
-                </Text>
-              </Box>
-            </Box>
-          ))}
-        </Stack>
-      </Box>
+      <div>
+        {keys.map((educationKey) => (
+          <div key={educationKey} className={`${styles.item} divider`}>
+            <Image
+              src={`/education/${translation(`${educationKey}.logo`)}`}
+              alt={`${translation(`${educationKey}.name`)} logo`}
+              className={styles.logo}
+              width={50}
+              height={50}
+            />
+            <div>
+              <p className={styles.name}>
+                {translation(`${educationKey}.name`)}
+              </p>
+              <p className={styles.details}>
+                {`${translation(`${educationKey}.degree`)} (${translation(
+                  `${educationKey}.year`
+                )})`}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
     </AnimatedPaper>
   );
 };

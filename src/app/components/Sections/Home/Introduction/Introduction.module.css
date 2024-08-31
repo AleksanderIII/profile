@@ -6,5 +6,23 @@
 }
 
 .highlight {
-  color: orange;
+  animation: colorChange 3s infinite;
+}
+
+@keyframes colorChange {
+  0% {
+    color: rgb(237, 208, 151);
+  }
+  25% {
+    color: rgb(244, 193, 105);
+  }
+  50% {
+    color: orange;
+  }
+  75% {
+    color: rgb(244, 193, 105);
+  }
+  100% {
+    color: rgb(237, 208, 151);
+  }
 }

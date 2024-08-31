@@ -1,5 +1,9 @@
 .sidebarContainer {
   flex: 1 1 33%;
+  padding: 2rem;
+  padding-top: 1rem;
+  margin-top: 1.5rem;
+  box-shadow: 2px 4px 6px rgba(67, 66, 66, 0.186);
 }
 
 .sidebarContent {

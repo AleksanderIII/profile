@@ -1,6 +1,7 @@
 import React from 'react';
-import { Box, Button, useColorModeValue } from '@chakra-ui/react';
 import { useTranslations } from 'next-intl';
+
+import Button from '../ui/Button/Button';
 
 import Intro from './partials/Intro/Intro';
 import Languages from './partials/Languages/Languages';
@@ -9,25 +10,17 @@ import SidebarSection from './partials/SidebarSection/SidebarSection';
 
 import styles from './Sidebar.module.css';
 
-interface SidebarProps {
-  onClose: () => void;
-}
+interface SidebarProps {}
 
-const Sidebar: React.FC<SidebarProps> = ({ onClose }) => {
+const Sidebar: React.FC<SidebarProps> = () => {
   const languageTranslations = useTranslations('Languages');
   const skillsTranslations = useTranslations('Skills');
   const commonTranslations = useTranslations('common');
 
-  const sidebarBg = useColorModeValue('light.background', 'dark.background');
-  const sidebarColor = useColorModeValue('light.text', 'dark.text');
   return (
-    <Box
-      bg={sidebarBg}
-      color={sidebarColor}
-      className={styles.sidebarContainer}
-    >
-      <Box className={styles.sidebarContent}>
-        <Button className={styles.closeButton} onClick={onClose}>
+    <div className={styles.sidebarContainer}>
+      <div className={styles.sidebarContent}>
+        <Button className={styles.closeButton}>
           {commonTranslations('close')}
         </Button>
         <SidebarSection>
@@ -39,8 +32,8 @@ const Sidebar: React.FC<SidebarProps> = ({ onClose }) => {
         <SidebarSection title={skillsTranslations('title')} link='/skills'>
           <Skills />
         </SidebarSection>
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 };
 
