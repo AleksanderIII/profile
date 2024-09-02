@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
 import { IoIosArrowForward } from 'react-icons/io';
 
@@ -33,7 +33,7 @@ const Accordion = ({ header, data }: IAccordionProps) => {
     <div>
       <h4 className={styles.header}>{header}</h4>
       {data.map((category) => (
-        <>
+        <Fragment key={`fragment-${category.name}`}>
           <h5
             className={styles.category}
             key={category.name}
@@ -67,7 +67,7 @@ const Accordion = ({ header, data }: IAccordionProps) => {
                 </div>
               ))
             : null}
-        </>
+        </Fragment>
       ))}
     </div>
   );
