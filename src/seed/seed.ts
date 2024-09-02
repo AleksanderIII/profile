@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client';
+const { PrismaClient } = require('@prisma/client');
 
 const prisma = new PrismaClient();
 
@@ -91,10 +91,14 @@ const skills: {
 ];
 
 async function main() {
+  const deleteResult = await prisma.skill.deleteMany();
+  console.log(`Deleted ${deleteResult.count} records from skill table.`);
+
   for (const skill of skills) {
-    await prisma.skill.create({
+    const { name } = await prisma.skill.create({
       data: skill,
     });
+    console.log(`added ${name}`);
   }
 }
 

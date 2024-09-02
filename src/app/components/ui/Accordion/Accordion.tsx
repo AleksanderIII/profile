@@ -5,14 +5,11 @@ import { IoIosArrowDown } from 'react-icons/io';
 import { IoIosArrowForward } from 'react-icons/io';
 
 import styles from './Accordion.module.css';
+import { ISubCategory } from '@/app/models/skills';
 
 interface IAccordionProps {
   header: string;
-  data: {
-    name: string;
-    id: string;
-    data: { name: string; rating: number }[];
-  }[];
+  data: ISubCategory[];
 }
 
 const getBgColor = (rating: number) => {
@@ -39,27 +36,27 @@ const Accordion = ({ header, data }: IAccordionProps) => {
         <>
           <h5
             className={styles.category}
-            key={category.id}
+            key={category.name}
             onClick={() =>
               setOpenCategory((value) => {
-                if (value === category.id) {
+                if (value === category.name) {
                   return '';
                 } else {
-                  return category.id;
+                  return category.name;
                 }
               })
             }
           >
             {category.name}
             <span>
-              {openCategory === category.id ? (
+              {openCategory === category.name ? (
                 <IoIosArrowDown />
               ) : (
                 <IoIosArrowForward />
               )}
             </span>
           </h5>
-          {openCategory === category.id
+          {openCategory === category.name
             ? category.data.map((skill) => (
                 <div
                   className={`${styles.skill} ${getBgColor(skill.rating)}`}
