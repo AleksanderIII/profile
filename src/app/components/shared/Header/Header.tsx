@@ -20,9 +20,10 @@ const Header = () => {
   ];
 
   return (
-    <div className={`${styles.headerContainer}`}>
+    <div className={styles.headerContainer}>
+      <div>A. M.</div>
       <Navigation items={navigationItems} />
-      <div>
+      <div className={styles.switcherWrapper}>
         <LocaleSwitcher locale={locale} />
       </div>
     </div>

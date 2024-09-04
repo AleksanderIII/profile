@@ -7,19 +7,21 @@ export enum Levels {
   C2 = 'C2',
 }
 
-export function levelToProgress(level: Levels) {
+export function levelToStars(level: Levels) {
   switch (level) {
     case Levels.A1:
-      return 100 / 6;
+      return 1;
     case Levels.A2:
-      return 100 / 3;
+      return 2;
     case Levels.B1:
-      return 100 / 2;
+      return 3;
     case Levels.B2:
-      return (100 / 6) * 4;
+      return 4;
     case Levels.C1:
-      return (100 / 6) * 5;
+      return 5;
     case Levels.C2:
-      return 100;
+      return 5;
+    default:
+      return 0;
   }
 }

@@ -5,7 +5,7 @@
     },
     "SideSummary": {
         "name": "Aleksandr Matyushik",
-        "title": "Front-end developer",
+        "title": "Fullstack developer",
         "linkedin": "LinkedIn link"
     },
     "notFound": {
@@ -27,6 +27,8 @@
         }
     },
     "introduction": {
+        "me": "I'm <name>Aleksandr Matyushik</name>",
+        "specialization": "Fullstack developer",
         "message": "Hello! My name is <name>Aleksandr Matyushik</name>, I am an experienced Front-End Developer with over five years of solid experience in software development. Currently, I reside in Minsk, Belarus, and I am seeking new opportunities."
     },
     "Education": {
